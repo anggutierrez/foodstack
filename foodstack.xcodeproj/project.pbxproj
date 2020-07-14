@@ -104,15 +104,18 @@
 		ACF03C4624BE5F1700BBA1D9 /* foodstack */ = {
 			isa = PBXGroup;
 			children = (
+				ACF03C7E24BE5F9100BBA1D9 /* View Controllers */,
+				ACF03C7D24BE5F8A00BBA1D9 /* Views */,
+				ACF03C7C24BE5F8400BBA1D9 /* Models */,
+				ACF03C5024BE5F1700BBA1D9 /* Main.storyboard */,
+				ACF03C5524BE5F1800BBA1D9 /* LaunchScreen.storyboard */,
 				ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */,
 				ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */,
 				ACF03C4A24BE5F1700BBA1D9 /* SceneDelegate.h */,
 				ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */,
 				ACF03C4D24BE5F1700BBA1D9 /* ViewController.h */,
 				ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */,
-				ACF03C5024BE5F1700BBA1D9 /* Main.storyboard */,
 				ACF03C5324BE5F1800BBA1D9 /* Assets.xcassets */,
-				ACF03C5524BE5F1800BBA1D9 /* LaunchScreen.storyboard */,
 				ACF03C5824BE5F1800BBA1D9 /* Info.plist */,
 				ACF03C5924BE5F1800BBA1D9 /* main.m */,
 			);
@@ -135,6 +138,27 @@
 				ACF03C7024BE5F1800BBA1D9 /* Info.plist */,
 			);
 			path = foodstackUITests;
+			sourceTree = "<group>";
+		};
+		ACF03C7C24BE5F8400BBA1D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ACF03C7D24BE5F8A00BBA1D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACF03C7E24BE5F9100BBA1D9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
