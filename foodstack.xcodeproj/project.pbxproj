@@ -18,11 +18,11 @@
 		ACF03C5A24BE5F1800BBA1D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C5924BE5F1800BBA1D9 /* main.m */; };
 		ACF03C6424BE5F1800BBA1D9 /* foodstackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C6324BE5F1800BBA1D9 /* foodstackTests.m */; };
 		ACF03C6F24BE5F1800BBA1D9 /* foodstackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C6E24BE5F1800BBA1D9 /* foodstackUITests.m */; };
-		ACF03C8124BE607D00BBA1D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C8024BE607D00BBA1D9 /* LoginViewController.m */; };
 		ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C8324BE609C00BBA1D9 /* EntryCell.m */; };
 		ACF03C8D24BE620200BBA1D9 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C8C24BE620200BBA1D9 /* RecipeCell.m */; };
 		ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C8F24BE633F00BBA1D9 /* Entry.m */; };
 		ACF03C9324BE636200BBA1D9 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C9224BE636200BBA1D9 /* Recipe.m */; };
+		ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */; };
 		E8F9C2E3C7A66B11D8913800 /* Pods_foodstackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278BB8CAB9933E47D8A3694D /* Pods_foodstackTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +70,6 @@
 		ACF03C6A24BE5F1800BBA1D9 /* foodstackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodstackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF03C6E24BE5F1800BBA1D9 /* foodstackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = foodstackUITests.m; sourceTree = "<group>"; };
 		ACF03C7024BE5F1800BBA1D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACF03C7F24BE607D00BBA1D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		ACF03C8024BE607D00BBA1D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		ACF03C8224BE609C00BBA1D9 /* EntryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryCell.h; sourceTree = "<group>"; };
 		ACF03C8324BE609C00BBA1D9 /* EntryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryCell.m; sourceTree = "<group>"; };
 		ACF03C8B24BE620200BBA1D9 /* RecipeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCell.h; sourceTree = "<group>"; };
@@ -80,6 +78,8 @@
 		ACF03C8F24BE633F00BBA1D9 /* Entry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		ACF03C9124BE636200BBA1D9 /* Recipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		ACF03C9224BE636200BBA1D9 /* Recipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FF4D3DE7A9631834C66E2F78 /* Pods-foodstack-foodstackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodstack-foodstackUITests.debug.xcconfig"; path = "Target Support Files/Pods-foodstack-foodstackUITests/Pods-foodstack-foodstackUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,8 +220,8 @@
 		ACF03C7E24BE5F9100BBA1D9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACF03C7F24BE607D00BBA1D9 /* LoginViewController.h */,
-				ACF03C8024BE607D00BBA1D9 /* LoginViewController.m */,
+				ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */,
+				ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -469,10 +469,10 @@
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
 				ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
+				ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */,
 				ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */,
 				ACF03C5A24BE5F1800BBA1D9 /* main.m in Sources */,
 				ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */,
-				ACF03C8124BE607D00BBA1D9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
