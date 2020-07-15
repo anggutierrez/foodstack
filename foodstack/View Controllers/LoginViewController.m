@@ -28,7 +28,6 @@
 			} else {
 				NSLog(@"User logged in successfully");
 				[self performSegueWithIdentifier:@"LoginSegue" sender:nil];
-				// display view controller
 			}
 		}];
 	}

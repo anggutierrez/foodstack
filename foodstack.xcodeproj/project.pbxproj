@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		39485A0F4D215FF4794F01FE /* Pods_foodstack_foodstackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */; };
 		7D01378D66811BC4DDB4EF04 /* Pods_foodstack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */; };
+		AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */; };
+		AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */; };
+		AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */; };
+		AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3124BFBA8000CD6600 /* SearchCell.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
 		ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */; };
@@ -52,6 +56,14 @@
 		588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5903AC8CF467308AF707C74C /* Pods-foodstack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodstack.release.xcconfig"; path = "Target Support Files/Pods-foodstack/Pods-foodstack.release.xcconfig"; sourceTree = "<group>"; };
 		6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack_foodstackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		AC6EFA2D24BFA48300CD6600 /* ListsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListsViewController.h; sourceTree = "<group>"; };
+		AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
+		AC6EFA3024BFBA8000CD6600 /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
+		AC6EFA3124BFBA8000CD6600 /* SearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
 		ACF03C4424BE5F1700BBA1D9 /* foodstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -213,6 +225,8 @@
 				ACF03C8324BE609C00BBA1D9 /* EntryCell.m */,
 				ACF03C8B24BE620200BBA1D9 /* RecipeCell.h */,
 				ACF03C8C24BE620200BBA1D9 /* RecipeCell.m */,
+				AC6EFA3024BFBA8000CD6600 /* SearchCell.h */,
+				AC6EFA3124BFBA8000CD6600 /* SearchCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +236,12 @@
 			children = (
 				ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */,
 				ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */,
+				AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */,
+				AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */,
+				AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */,
+				AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */,
+				AC6EFA2D24BFA48300CD6600 /* ListsViewController.h */,
+				AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -466,13 +486,17 @@
 			files = (
 				ACF03C8D24BE620200BBA1D9 /* RecipeCell.m in Sources */,
 				ACF03C9324BE636200BBA1D9 /* Recipe.m in Sources */,
+				AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */,
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
 				ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
 				ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */,
+				AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */,
 				ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */,
+				AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */,
 				ACF03C5A24BE5F1800BBA1D9 /* main.m in Sources */,
 				ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */,
+				AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
