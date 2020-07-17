@@ -1,26 +1,27 @@
 //
-//  ListsViewController.m
+//  ProfileViewController.m
 //  foodstack
 //
-//  Created by Angel Gutierrez on 7/15/20.
+//  Created by Angel Gutierrez on 7/17/20.
 //  Copyright © 2020 Angel Gutierrez. All rights reserved.
 //
 
-#import "ListsViewController.h"
-#import "LoginViewController.h"
+#import "ProfileViewController.h"
 #import "Parse/Parse.h"
+#import "LoginViewController.h"
 #import "SceneDelegate.h"
 
-@interface ListsViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation ListsViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 - (IBAction)didTapLogout:(id)sender {
 	NSLog(@"Logout getting called.");
 	

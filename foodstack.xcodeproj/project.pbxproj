@@ -13,6 +13,10 @@
 		AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */; };
 		AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */; };
 		AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3124BFBA8000CD6600 /* SearchCell.m */; };
+		AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3424C2415700CD6600 /* ProfileViewController.m */; };
+		AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3724C2441300CD6600 /* SearchViewController.m */; };
+		AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */; };
+		AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
 		ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */; };
@@ -64,6 +68,14 @@
 		AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		AC6EFA3024BFBA8000CD6600 /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
 		AC6EFA3124BFBA8000CD6600 /* SearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
+		AC6EFA3324C2415700CD6600 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		AC6EFA3424C2415700CD6600 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		AC6EFA3624C2441300CD6600 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		AC6EFA3724C2441300CD6600 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		AC6EFA3924C2523000CD6600 /* ComposeEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeEntryViewController.h; sourceTree = "<group>"; };
+		AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeEntryViewController.m; sourceTree = "<group>"; };
+		AC6EFA3C24C2526000CD6600 /* ComposeRecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeRecipeViewController.h; sourceTree = "<group>"; };
+		AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeRecipeViewController.m; sourceTree = "<group>"; };
 		ACF03C4424BE5F1700BBA1D9 /* foodstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +156,39 @@
 				10108AC4A3A211E18935BEBA /* Pods-foodstackTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC6EFA4124C2538100CD6600 /* User Login */ = {
+			isa = PBXGroup;
+			children = (
+				ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */,
+				ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */,
+				AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */,
+				AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */,
+			);
+			path = "User Login";
+			sourceTree = "<group>";
+		};
+		AC6EFA4224C253BE00CD6600 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */,
+				AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */,
+				AC6EFA2D24BFA48300CD6600 /* ListsViewController.h */,
+				AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		AC6EFA4324C253E500CD6600 /* Compose Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC6EFA3924C2523000CD6600 /* ComposeEntryViewController.h */,
+				AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */,
+				AC6EFA3C24C2526000CD6600 /* ComposeRecipeViewController.h */,
+				AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */,
+			);
+			path = "Compose Views";
 			sourceTree = "<group>";
 		};
 		ACF03C3B24BE5F1700BBA1D9 = {
@@ -234,14 +279,13 @@
 		ACF03C7E24BE5F9100BBA1D9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */,
-				ACF03C9524BE6C3900BBA1D9 /* LoginViewController.m */,
-				AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */,
-				AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */,
-				AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */,
-				AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */,
-				AC6EFA2D24BFA48300CD6600 /* ListsViewController.h */,
-				AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */,
+				AC6EFA4124C2538100CD6600 /* User Login */,
+				AC6EFA4224C253BE00CD6600 /* Main Views */,
+				AC6EFA4324C253E500CD6600 /* Compose Views */,
+				AC6EFA3324C2415700CD6600 /* ProfileViewController.h */,
+				AC6EFA3424C2415700CD6600 /* ProfileViewController.m */,
+				AC6EFA3624C2441300CD6600 /* SearchViewController.h */,
+				AC6EFA3724C2441300CD6600 /* SearchViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -488,14 +532,18 @@
 				ACF03C9324BE636200BBA1D9 /* Recipe.m in Sources */,
 				AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */,
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
+				AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */,
+				AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */,
 				ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
+				AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */,
 				ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */,
 				AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */,
 				ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */,
 				AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */,
 				ACF03C5A24BE5F1800BBA1D9 /* main.m in Sources */,
 				ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */,
+				AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */,
 				AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

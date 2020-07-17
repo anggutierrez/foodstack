@@ -13,16 +13,20 @@
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
+@dynamic calCount;
+@dynamic entryDescription;
+
 @dynamic image;
 
 + (nonnull NSString *)parseClassName {
     return @"Entry";
 }
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserEntry: ( NSString * _Nullable )entryDescription withCalCount: ( NSNumber * _Nullable )calCount withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Entry *newEntry = [Entry new];
-    newEntry.image = [self getPFFileFromImage:image];
+	newEntry.entryDescription = entryDescription;
+	newEntry.calCount = calCount;
     newEntry.author = [PFUser currentUser];
     
     [newEntry saveInBackgroundWithBlock: completion];

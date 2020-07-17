@@ -1,39 +1,34 @@
 //
-//  TimelineViewController.m
+//  ListsViewController.m
 //  foodstack
 //
 //  Created by Angel Gutierrez on 7/15/20.
 //  Copyright © 2020 Angel Gutierrez. All rights reserved.
 //
 
-#import "TimelineViewController.h"
+#import "ListsViewController.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
+#import "Entry.h"
 
-@interface TimelineViewController ()
+@interface ListsViewController ()
 
 @end
 
-@implementation TimelineViewController
+@implementation ListsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)didTapLogout:(id)sender {
-	NSLog(@"Logout getting called.");
-	
-	SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-	
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-	
-	LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-	
-	sceneDelegate.window.rootViewController = loginViewController;
-	
-	[PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
+- (IBAction)didTapProfile:(id)sender {
+	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
+}
+
+- (IBAction)didTapSearch:(id)sender {
+	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
 }
 
 /*

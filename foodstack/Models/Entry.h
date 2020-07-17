@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
+@property (nonatomic, strong) NSString *entryDescription;
+@property (nonatomic, strong) NSNumber *calCount;
 @property (nonatomic, strong) PFFileObject *image;
+
++ (void) postUserEntry: ( NSString * _Nullable )entryDescription withCalCount: ( NSNumber * _Nullable )calCount withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 
