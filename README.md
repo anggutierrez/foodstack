@@ -24,14 +24,14 @@ foodstack is a meal prep and calorie counting companion app. Where you can save 
 
 **Required Must-have Stories**
 
-* Sign Up for foodstack account
-* Log in / Log Out to foodstack
-* Use Camera to set profile picture
-* User can view calories based on the food they enter
-* User can create "meal prep" lists
+* user can sign-up for a foodstack account
+* user can log in & log out of foodstack
+* user can use the camera to set a profile picture
+* user can search for a cerain food and see its calories
+    * user can double-tap to save recipes
+* user can create recipe lists
 * Location-logged eating habits
     * Google Maps SDK
-* Double-tap to favorite recipes
 * Visual Polish
     * Auto-layout
     * Change between views with a button
@@ -43,6 +43,7 @@ foodstack is a meal prep and calorie counting companion app. Where you can save 
 * Persisted User across app restarts
 * Use camera to share pictures of food to a feed
 * "Explore"/"Discover" page for food, meal preps, and recipes
+* User can compile recipe lists together to create "meal prep" lists
 * Subscribe/follow a user to keep track of their food with them (togglable)
 
 
@@ -99,7 +100,9 @@ foodstack is a meal prep and calorie counting companion app. Where you can save 
 | recipeDescription | string | description of the recipe |
 | calorieCount | integer | used to present calorie count to user |
 | ingredientCount | integer | used to present number of ingredients to user |
+| totalServings | integer | used in conjunction with ingredientCount to multply the number of ingredients. the total servings will be the number of meals |
 | servingSize | integer | used to make calorie counts |
+| macros | dictionary | holds various macro-nutrients |
 
 
 
@@ -117,4 +120,5 @@ foodstack is a meal prep and calorie counting companion app. Where you can save 
     - (Delete) Delete existing like
 
 - [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Example GET request for spoonacular API
+    - https://api.spoonacular.com/recipes/search?query=cheese&number=2
