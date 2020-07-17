@@ -26,6 +26,7 @@
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
+	
 }
 
 - (IBAction)didTapProfile:(id)sender {
