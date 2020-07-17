@@ -48,4 +48,14 @@
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
+
+/* -- Put this in the viewDidLoad() to test funcionality
+NSNumber *myNum = [NSNumber numberWithInteger:800];
+[Recipe postUserRecipe:@"Lasagna" withCalCount:myNum withRecipeDescription:@"This recipe uses 3 cheeses and red tomato sauce." withImage:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+	if (succeeded) {
+		NSLog(@"Succesfully posted user recipe!");
+	}
+}];
+ */
+
 @end
