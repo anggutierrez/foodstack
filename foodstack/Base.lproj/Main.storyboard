@@ -393,6 +393,9 @@
                         <viewLayoutGuide key="safeArea" id="zhM-f4-hi5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="UaV-6g-J1r"/>
+                    <connections>
+                        <outlet property="tableView" destination="NFG-CL-hpE" id="jVs-b8-c0S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYJ-JP-AZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
