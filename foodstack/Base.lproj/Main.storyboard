@@ -514,6 +514,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeDescription" destination="IWP-Is-Tba" id="miT-J7-LOE"/>
+                                            <outlet property="recipeTitle" destination="kJK-DO-Em0" id="rHZ-ui-rgH"/>
+                                            <outlet property="recipeType" destination="2MK-QB-rWi" id="7dw-fV-wMh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -534,6 +539,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="Sr8-f7-DYO" id="qUS-Ai-ZwH"/>
                         <segue destination="LUY-7l-m1u" kind="presentation" identifier="AddSegue" id="4xK-3A-G0b"/>
                         <segue destination="bmF-54-y4q" kind="show" identifier="SearchSegue" id="6yg-Yh-0MV"/>
                         <segue destination="ubS-MD-Rwd" kind="show" identifier="ProfileSegue" id="1YN-jI-qJM"/>
@@ -569,6 +575,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gxE-9N-F68"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhj-e7-sJG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

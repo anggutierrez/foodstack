@@ -15,6 +15,15 @@
     // Initialization code
 }
 
+- (void)setRecipe:(Recipe *)recipe {
+	_recipe = recipe;
+	//	self.photoImageView.file = recipe[@"image"];
+	//	[self.photoImageView loadInBackground];
+	
+	self.recipeTitle.text = recipe[@"recipeTitle"];
+	self.recipeDescription.text = recipe[@"recipeDescription"];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
