@@ -219,6 +219,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="entryCalories" destination="c8F-Mg-ZkF" id="iW8-o3-1jb"/>
+                                            <outlet property="entryDescription" destination="NBW-WI-HRV" id="iyZ-Bg-iLz"/>
+                                            <outlet property="entryTimestamp" destination="VAE-Lp-b8P" id="XqQ-TL-k4a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -610,7 +615,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6Ti-fS-iFC"/>
-        <segue reference="6yg-Yh-0MV"/>
-        <segue reference="1YN-jI-qJM"/>
+        <segue reference="qVv-vV-Rev"/>
+        <segue reference="tgM-Dv-LVV"/>
     </inferredMetricsTieBreakers>
 </document>

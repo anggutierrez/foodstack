@@ -15,6 +15,8 @@
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -26,7 +28,32 @@
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
+	self.tableView.rowHeight = 165;
 	
+    self.refreshControl = [[UIRefreshControl alloc] init];
+	[self.refreshControl addTarget:self action:@selector(fetchEntries) forControlEvents:UIControlEventValueChanged];
+	[self.tableView insertSubview:self.refreshControl atIndex:0];
+	
+	[self fetchEntries];
+	
+}
+
+- (void)fetchEntries {
+	PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
+	[query orderByDescending: @"createdAt"];
+	query.limit = 20;
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
+		if (entries != nil) {
+			NSLog(@"😎😎😎 Successfully loaded entries");
+			self.entries = (NSMutableArray *) entries;
+			
+			[self.tableView reloadData];
+		} else {
+			NSLog(@"%@", error.localizedDescription);
+		}
+		[self.refreshControl endRefreshing];
+	}];
 }
 
 - (IBAction)didTapProfile:(id)sender {
@@ -53,11 +80,14 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	EntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EntryCell" forIndexPath:indexPath];
 	
+	Entry *entry = self.entries[indexPath.row];
+	cell.entry = entry;
+	
 	return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 20;
+	return self.entries.count;
 }
 
 @end
