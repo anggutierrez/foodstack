@@ -21,6 +21,7 @@
 	//	self.photoImageView.file = recipe[@"image"];
 	//	[self.photoImageView loadInBackground];
 	
+	self.entryTitle.text = entry[@"entryTitle"];
 	self.entryDescription.text = entry[@"entryDescription"];
 	
 	NSString *calories = [NSString stringWithFormat:@"%@", entry[@"calCount"]];

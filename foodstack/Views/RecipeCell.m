@@ -17,8 +17,9 @@
 
 - (void)setRecipe:(Recipe *)recipe {
 	_recipe = recipe;
-	//	self.photoImageView.file = recipe[@"image"];
-	//	[self.photoImageView loadInBackground];
+	
+	self.recipeImageView.file = recipe[@"image"];
+	[self.recipeImageView loadInBackground];
 	
 	self.recipeTitle.text = recipe[@"recipeTitle"];
 	self.recipeDescription.text = recipe[@"recipeDescription"];

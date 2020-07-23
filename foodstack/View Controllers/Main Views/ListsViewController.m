@@ -59,6 +59,10 @@
 	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
 
+- (IBAction)didTapAdd:(id)sender {
+		[self performSegueWithIdentifier:@"AddSegue" sender:nil];
+}
+
 - (IBAction)didTapSearch:(id)sender {
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
 }

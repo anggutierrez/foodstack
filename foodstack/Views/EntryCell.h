@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *entryCalories;
 @property (weak, nonatomic) IBOutlet UILabel *entryTimestamp;
 @property (weak, nonatomic) IBOutlet UILabel *entryDescription;
+@property (weak, nonatomic) IBOutlet UILabel *entryTitle;
 
 @end
 
