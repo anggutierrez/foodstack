@@ -189,22 +189,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="165" id="NH6-sf-8lK" customClass="EntryCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="165"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="105" id="NH6-sf-8lK" customClass="EntryCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NH6-sf-8lK" id="vGg-Jy-OQc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8F-Mg-ZkF">
-                                                    <rect key="frame" x="20" y="11" width="104" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-Lp-b8P">
-                                                    <rect key="frame" x="20" y="132" width="86" height="21"/>
+                                                    <rect key="frame" x="20" y="73" width="86" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -212,6 +205,13 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBW-WI-HRV">
                                                     <rect key="frame" x="143" y="11" width="251" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8F-Mg-ZkF">
+                                                    <rect key="frame" x="20" y="10" width="104" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -237,15 +237,22 @@
                                 <action selector="didTapProfile:" destination="MeK-NV-sTT" id="thB-eS-LzF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="veq-UH-KlU">
-                            <connections>
-                                <action selector="didTapSearch:" destination="MeK-NV-sTT" id="ieJ-Ld-Fx3"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Search" id="veq-UH-KlU">
+                                <connections>
+                                    <action selector="didTapSearch:" destination="MeK-NV-sTT" id="ieJ-Ld-Fx3"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Add" id="Slf-ta-mjF">
+                                <connections>
+                                    <action selector="didTapAdd:" destination="MeK-NV-sTT" id="hde-Ca-cmw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nwd-UJ-ZIb" id="HCI-F9-AoI"/>
-                        <segue destination="dFM-2X-RI2" kind="presentation" identifier="AddSegue" id="EHG-TZ-XfZ"/>
+                        <segue destination="gtI-rh-jlZ" kind="presentation" identifier="AddSegue" id="EHG-TZ-XfZ"/>
                         <segue destination="ubS-MD-Rwd" kind="show" identifier="ProfileSegue" id="tgM-Dv-LVV"/>
                         <segue destination="bmF-54-y4q" kind="show" identifier="SearchSegue" id="qVv-vV-Rev"/>
                     </connections>
@@ -352,12 +359,26 @@
                         <viewLayoutGuide key="safeArea" id="UWh-VU-t1r"/>
                     </view>
                     <navigationItem key="navigationItem" id="HwU-46-HzX">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="iES-XF-lWk"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="1ha-2t-bKd">
+                            <connections>
+                                <action selector="onTapCancel:" destination="dFM-2X-RI2" id="Ktx-OI-WPz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="iES-XF-lWk">
+                            <connections>
+                                <action selector="onTapSave:" destination="dFM-2X-RI2" id="jJs-xd-Vn0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="composeCalField" destination="38f-aO-4q8" id="YQK-8P-4iQ"/>
+                        <outlet property="composeDescField" destination="ENc-HZ-xqP" id="8gJ-yd-kAS"/>
+                        <outlet property="composeTitleField" destination="C1K-K4-5OW" id="o2Q-CS-qRO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aD-Ha-D7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="-1502"/>
+            <point key="canvasLocation" x="2562" y="-2131"/>
         </scene>
         <!--Search-->
         <scene sceneID="Fre-e7-uYV">
@@ -489,11 +510,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="120" id="yrf-QQ-2Uv" customClass="RecipeCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="105" id="yrf-QQ-2Uv" customClass="RecipeCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrf-QQ-2Uv" id="LQR-KD-orK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJK-DO-Em0">
@@ -611,6 +632,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzI-cc-OXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1819" y="-196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="el8-fS-pvj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gtI-rh-jlZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hBq-kf-y7m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dFM-2X-RI2" kind="relationship" relationship="rootViewController" id="43Q-uD-dwd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8r8-Km-Vud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562" y="-1479"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

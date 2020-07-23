@@ -7,8 +7,13 @@
 //
 
 #import "ComposeEntryViewController.h"
+#import "Entry.h"
 
 @interface ComposeEntryViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *composeTitleField;
+@property (weak, nonatomic) IBOutlet UITextField *composeCalField;
+@property (weak, nonatomic) IBOutlet UITextView *composeDescField;
+
 
 @end
 
@@ -16,7 +21,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (bool) _isEmpty {
+	if (!self.composeTitleField.hasText && !self.composeCalField.hasText && !self.composeDescField.hasText) {
+		return YES;
+	}
+	
+	return NO;
+}
+
+- (IBAction)onTapSave:(id)sender {
+	NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+	f.numberStyle = NSNumberFormatterDecimalStyle;
+	NSNumber *cal = [f numberFromString:self.composeCalField.text];
+	
+	if (![self _isEmpty]) {
+		[Entry postUserEntry:self.composeTitleField.text withDescription:self.composeDescField.text withCalCount:cal withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+		if (!error) {
+			[self dismissViewControllerAnimated:true completion:nil];
+		} else {
+			NSLog(@"%@", error.localizedDescription);
+		}
+			}];
+	}
+}
+
+- (IBAction)onTapCancel:(id)sender {
+	[self dismissViewControllerAnimated:true completion:nil];
 }
 
 /*

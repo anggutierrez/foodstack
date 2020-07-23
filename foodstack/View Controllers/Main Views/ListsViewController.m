@@ -28,7 +28,7 @@
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
-	self.tableView.rowHeight = 120;
+	self.tableView.rowHeight = 105;
 	
     self.refreshControl = [[UIRefreshControl alloc] init];
 	[self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];

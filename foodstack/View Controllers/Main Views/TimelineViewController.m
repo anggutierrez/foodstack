@@ -28,7 +28,7 @@
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
-	self.tableView.rowHeight = 165;
+	self.tableView.rowHeight = 105;
 	
     self.refreshControl = [[UIRefreshControl alloc] init];
 	[self.refreshControl addTarget:self action:@selector(fetchEntries) forControlEvents:UIControlEventValueChanged];
@@ -61,6 +61,9 @@
 
 }
 
+- (IBAction)didTapAdd:(id)sender {
+	[self performSegueWithIdentifier:@"AddSegue" sender:nil];
+}
 
 - (IBAction)didTapSearch:(id)sender {
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
