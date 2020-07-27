@@ -123,6 +123,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-qZ-2Ca">
                                 <rect key="frame" x="232" y="472" width="80" height="30"/>
                                 <state key="normal" title="Add Picture"/>
+                                <connections>
+                                    <action selector="didTapPicture:" destination="2uP-XT-Gsz" eventType="touchUpInside" id="QBU-m1-a2y"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGY-JK-vse">
                                 <rect key="frame" x="16" y="136" width="390" height="27"/>
@@ -171,6 +174,7 @@
                     <connections>
                         <outlet property="emailField" destination="EXX-iE-R03" id="SWb-fp-liI"/>
                         <outlet property="passwordField" destination="Qjm-27-Oi6" id="Pnl-OZ-cDL"/>
+                        <outlet property="profileImageView" destination="Un1-VF-See" id="lkQ-ZE-C9r"/>
                         <outlet property="usernameField" destination="rbb-no-Sw7" id="1nV-7a-KpS"/>
                         <segue destination="hDU-WT-h0Z" kind="show" identifier="LoginSegue" id="zXg-5S-Mvb"/>
                     </connections>
@@ -344,6 +348,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileImageView" destination="JdD-Rm-XNL" id="d8R-tt-XEP"/>
+                        <outlet property="profileUserLabel" destination="v5J-q4-cls" id="mZi-rg-jhf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPW-hE-U6O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,13 +465,51 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="126" id="LrV-ES-J7U">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="126"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="100" id="LrV-ES-J7U" customClass="SearchCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LrV-ES-J7U" id="UjK-fj-FWH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-q6-shY">
+                                                    <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="3Zl-9S-Sbm"/>
+                                                        <constraint firstAttribute="height" constant="80" id="lqL-di-yQ4"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df6-y7-3wz">
+                                                    <rect key="frame" x="96" y="10" width="52" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgS-27-J8E">
+                                                    <rect key="frame" x="96" y="39" width="86" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LgS-27-J8E" secondAttribute="bottom" constant="8" id="0pG-h8-vqD"/>
+                                                <constraint firstItem="LgS-27-J8E" firstAttribute="top" secondItem="Df6-y7-3wz" secondAttribute="bottom" constant="8" id="52t-V6-dmi"/>
+                                                <constraint firstItem="Qme-q6-shY" firstAttribute="leading" secondItem="UjK-fj-FWH" secondAttribute="leading" constant="8" id="BQj-8s-E35"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LgS-27-J8E" secondAttribute="trailing" constant="8" id="EJ8-PE-XLr"/>
+                                                <constraint firstItem="Qme-q6-shY" firstAttribute="centerY" secondItem="UjK-fj-FWH" secondAttribute="centerY" id="bq8-Wx-dSU"/>
+                                                <constraint firstItem="LgS-27-J8E" firstAttribute="leading" secondItem="Df6-y7-3wz" secondAttribute="leading" id="c3T-de-cy5"/>
+                                                <constraint firstItem="Df6-y7-3wz" firstAttribute="leading" secondItem="Qme-q6-shY" secondAttribute="trailing" constant="8" id="mLQ-LC-9xD"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Df6-y7-3wz" secondAttribute="trailing" constant="8" id="uAa-XG-ORn"/>
+                                                <constraint firstItem="Df6-y7-3wz" firstAttribute="top" secondItem="Qme-q6-shY" secondAttribute="top" id="yk0-4m-z2A"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchImageView" destination="Qme-q6-shY" id="t1e-cO-FfE"/>
+                                            <outlet property="searchIngredientsLabel" destination="LgS-27-J8E" id="AB8-NZ-YMZ"/>
+                                            <outlet property="searchRecipeLabel" destination="Df6-y7-3wz" id="gaA-wd-95D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -491,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYJ-JP-AZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3270" y="-196"/>
+            <point key="canvasLocation" x="3269.5652173913045" y="-196.20535714285714"/>
         </scene>
         <!--Compose Recipe View Controller-->
         <scene sceneID="DXR-ka-eNk">

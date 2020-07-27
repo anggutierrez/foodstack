@@ -19,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	
+	PFUser *user = [PFUser currentUser];
+	self.profileUserLabel.text = user.username;
+	self.profileImageView.image;
 }
 
 - (IBAction)didTapLogout:(id)sender {

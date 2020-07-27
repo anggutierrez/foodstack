@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *searchImageView;
+@property (weak, nonatomic) IBOutlet UILabel *searchRecipeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *searchIngredientsLabel;
+
 
 @end
 
