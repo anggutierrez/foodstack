@@ -17,6 +17,7 @@
 		AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3724C2441300CD6600 /* SearchViewController.m */; };
 		AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */; };
 		AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */; };
+		ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7C59224D0DF0A00DD5590 /* MapViewController.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
 		ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */; };
@@ -76,6 +77,8 @@
 		AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeEntryViewController.m; sourceTree = "<group>"; };
 		AC6EFA3C24C2526000CD6600 /* ComposeRecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeRecipeViewController.h; sourceTree = "<group>"; };
 		AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeRecipeViewController.m; sourceTree = "<group>"; };
+		ACA7C59124D0DF0A00DD5590 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		ACA7C59224D0DF0A00DD5590 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		ACF03C4424BE5F1700BBA1D9 /* foodstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				AC6EFA3424C2415700CD6600 /* ProfileViewController.m */,
 				AC6EFA3624C2441300CD6600 /* SearchViewController.h */,
 				AC6EFA3724C2441300CD6600 /* SearchViewController.m */,
+				ACA7C59124D0DF0A00DD5590 /* MapViewController.h */,
+				ACA7C59224D0DF0A00DD5590 /* MapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				ACF03C4124BE5F1700BBA1D9 /* Frameworks */,
 				ACF03C4224BE5F1700BBA1D9 /* Resources */,
 				60D75C7AB4A5C5D7F8B82C7F /* [CP] Embed Pods Frameworks */,
+				4E1F74D6A1EA16E1C8138643 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,6 +346,7 @@
 				ACF03C6724BE5F1800BBA1D9 /* Frameworks */,
 				ACF03C6824BE5F1800BBA1D9 /* Resources */,
 				25B04736515DD7199F2713DF /* [CP] Embed Pods Frameworks */,
+				A85B8253794416B90453F663 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -438,6 +445,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodstack-foodstackUITests/Pods-foodstack-foodstackUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4E1F74D6A1EA16E1C8138643 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-foodstack/Pods-foodstack-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-foodstack/Pods-foodstack-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodstack/Pods-foodstack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		60D75C7AB4A5C5D7F8B82C7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,6 +499,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A85B8253794416B90453F663 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-foodstack-foodstackUITests/Pods-foodstack-foodstackUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-foodstack-foodstackUITests/Pods-foodstack-foodstackUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodstack-foodstackUITests/Pods-foodstack-foodstackUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B27F67C178CB718BF59DC8FD /* [CP] Check Pods Manifest.lock */ = {
@@ -531,6 +572,7 @@
 				ACF03C8D24BE620200BBA1D9 /* RecipeCell.m in Sources */,
 				ACF03C9324BE636200BBA1D9 /* Recipe.m in Sources */,
 				AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */,
+				ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */,
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
 				AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */,
 				AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */,

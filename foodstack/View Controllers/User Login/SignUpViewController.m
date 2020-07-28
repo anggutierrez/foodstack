@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 
 @end
@@ -45,10 +44,6 @@
 			}
 		}];
 	}
-	
-}
-
-- (IBAction)didTapPicture:(id)sender {
 	
 }
 

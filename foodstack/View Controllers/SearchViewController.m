@@ -9,9 +9,11 @@
 #import "SearchViewController.h"
 #import "SearchCell.h"
 #import "UIImageView+AFNetworking.h"
+#import <StripHTML/NSString+StripHTML.h>
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (nonatomic, strong) NSArray *recipes;
 
 @end
@@ -26,16 +28,29 @@
 	self.tableView.delegate = self;
 	self.tableView.rowHeight = 120;
 	
-	[self searchRecipe:@"lasagna"];
-	
+}
+- (IBAction)didTapSearch:(id)sender {
+	if (![self.searchTextField.text isEqual:@""]) {
+		[self searchRecipe:self.searchTextField.text];
+		[self.tableView reloadData];
+	}
 }
 
 - (void) searchRecipe:(NSString * _Nullable)searchQuery {
 	NSString *baseURL = @"https://api.spoonacular.com/recipes/complexSearch?apiKey=0d90464651d5440fb07b64ea0f0d6185";
+	
 	searchQuery = [@"&query=" stringByAppendingString:searchQuery];
-	NSLog(@"%@", searchQuery);
-	NSString *newURL = [baseURL stringByAppendingString:searchQuery];
-	NSLog(@"%@", newURL);
+	
+	NSString *numberResults = [@"&number=" stringByAppendingString:@"2"];
+	
+	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"true"];
+	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"false"];
+	
+	NSString *includeExtendedInformation = [includeRecipeInformation stringByAppendingString:includeRecipeNutrition];
+	
+	NSString *fullURL = [NSString stringWithFormat:@"%@%@%@", searchQuery, numberResults, includeExtendedInformation];
+	
+	NSString *newURL = [baseURL stringByAppendingString:fullURL];
 	NSURL *url = [NSURL URLWithString:newURL];
 	
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -54,42 +69,13 @@
     [task resume];
 }
 
-- (NSString *) getRecipeInformation:(NSNumber * _Nullable)idNumber {
-	__block NSMutableString *ingredients;
-	NSString *idString = [NSString stringWithFormat:@"%@", idNumber];
-	
-	NSString *baseURL = @"https://api.spoonacular.com/recipes/";
-	NSString *apiKey = [idString stringByAppendingString:@"/information?apiKey=0d90464651d5440fb07b64ea0f0d6185"];
-	NSString *newURL = [baseURL stringByAppendingString:apiKey];
-	NSURL *url = [NSURL URLWithString:newURL];
-	
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-           if (error == nil) {
-			   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-			   ingredients = dataDictionary[@"extendedIngredients"];
-   
-			  // Used to make sure I was properly calling
-			   NSLog(@"Recipe information: ");
-			  NSLog(@"%@", dataDictionary);
-			  [self.tableView reloadData];
-           }
-       }];
-    [task resume];
-	
-	return ingredients;
-}
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	SearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
 	
 	NSDictionary *recipe = self.recipes[indexPath.row];
 	cell.searchRecipeLabel.text = recipe[@"title"];
-	
-	// This function makes a request loop
-	cell.searchIngredientsLabel.text = [self getRecipeInformation:recipe[@"id"]];
+	NSString *taglessString = [recipe[@"summary"] removeTags];
+	cell.searchIngredientsLabel.text = taglessString;
 	
     NSString *imageURLString = recipe[@"image"];
     NSURL *imageURL = [NSURL URLWithString:imageURLString];
@@ -100,10 +86,6 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (self.recipes.count >= 20) {
-		return 20;
-	}
-	
 	return self.recipes.count;
 }
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -27,9 +28,11 @@
 	
 	[Parse initializeWithConfiguration:config];
 	
+	[GMSServices provideAPIKey:@"AIzaSyDMsDogvXEpBegNlUXsFZjoWCQ4iiiKiz8"];
+
+	
 	return YES;
 }
-
 
 #pragma mark - UISceneSession lifecycle
 
