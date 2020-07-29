@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39485A0F4D215FF4794F01FE /* Pods_foodstack_foodstackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */; };
 		7D01378D66811BC4DDB4EF04 /* Pods_foodstack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */; };
+		AC38AABB24D1F06800E3FDF5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABA24D1F06800E3FDF5 /* Utils.m */; };
+		AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */; };
 		AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */; };
 		AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */; };
 		AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */; };
@@ -61,6 +63,10 @@
 		588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5903AC8CF467308AF707C74C /* Pods-foodstack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodstack.release.xcconfig"; path = "Target Support Files/Pods-foodstack/Pods-foodstack.release.xcconfig"; sourceTree = "<group>"; };
 		6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack_foodstackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC38AAB924D1F06800E3FDF5 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		AC38AABA24D1F06800E3FDF5 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsViewController.h; sourceTree = "<group>"; };
+		AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsViewController.m; sourceTree = "<group>"; };
 		AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
@@ -161,6 +167,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AC38AAB524D1EF9A00E3FDF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC38AAB924D1F06800E3FDF5 /* Utils.h */,
+				AC38AABA24D1F06800E3FDF5 /* Utils.m */,
+				AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */,
+				AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AC6EFA4124C2538100CD6600 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +239,7 @@
 				ACF03C7E24BE5F9100BBA1D9 /* View Controllers */,
 				ACF03C7D24BE5F8A00BBA1D9 /* Views */,
 				ACF03C7C24BE5F8400BBA1D9 /* Models */,
+				AC38AAB524D1EF9A00E3FDF5 /* Utils */,
 				ACF03C5024BE5F1700BBA1D9 /* Main.storyboard */,
 				ACF03C5524BE5F1800BBA1D9 /* LaunchScreen.storyboard */,
 				ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */,
@@ -577,9 +595,11 @@
 				AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */,
 				AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */,
 				ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */,
+				AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
 				AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */,
 				ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */,
+				AC38AABB24D1F06800E3FDF5 /* Utils.m in Sources */,
 				AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */,
 				ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */,
 				AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */,

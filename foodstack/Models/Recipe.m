@@ -7,6 +7,7 @@
 //
 
 #import "Recipe.h"
+#import "Utils.h"
 
 @implementation Recipe
 @dynamic postID;
@@ -28,25 +29,10 @@
 	newRecipe.recipeTitle = recipeTitle;
 	newRecipe.calCount = calCount;
 	newRecipe.recipeDescription = recipeDescription;
-	newRecipe.image = [self getPFFileFromImage:image];
+	newRecipe.image = [Utils getPFFileFromImage:image];
     newRecipe.author = [PFUser currentUser];
     
     [newRecipe saveInBackgroundWithBlock: completion];
-}
-
-+ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
-    // check if image is not nil
-    if (!image) {
-        return nil;
-    }
-    
-    NSData *imageData = UIImagePNGRepresentation(image);
-    // get image data and check if that is not nil
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
 /* -- Put this in the viewDidLoad() to test funcionality
