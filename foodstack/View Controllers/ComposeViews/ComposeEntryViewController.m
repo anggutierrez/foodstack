@@ -24,11 +24,19 @@
 }
 
 - (bool) _isEmpty {
-	if (!self.composeTitleField.hasText && !self.composeCalField.hasText && !self.composeDescField.hasText) {
-		return YES;
+	if (self.composeTitleField.hasText && self.composeCalField.hasText && self.composeDescField.hasText) {
+		return NO;
 	}
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing Title, Calories, or Description!" message:@"Fill in the required fields." preferredStyle:(UIAlertControllerStyleAlert)];
 	
-	return NO;
+	UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+	
+	[alert addAction:okAction];
+	
+	[self presentViewController:alert animated:YES completion:^{
+	}];
+	
+	return YES;
 }
 
 - (IBAction)onTapSave:(id)sender {

@@ -21,17 +21,17 @@
 	//	self.photoImageView.file = recipe[@"image"];
 	//	[self.photoImageView loadInBackground];
 	
-	self.entryTitle.text = entry[@"entryTitle"];
-	self.entryDescription.text = entry[@"entryDescription"];
+	self.entryTitle.text = entry.entryTitle;
+	self.entryDescription.text = entry.entryDescription;
 	
-	NSString *calories = [NSString stringWithFormat:@"%@", entry[@"calCount"]];
+	NSString *calories = [entry.calCount stringValue];
 	self.entryCalories.text = calories;
 	
-	NSDate *createdAtOriginalString = [self.entry createdAt];
+	NSDate *createdAt = [entry createdAt];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	// Configure the input format to parse the date string
 	formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-	self.entryTimestamp.text = [createdAtOriginalString shortTimeAgoSinceNow];
+	self.entryTimestamp.text = [createdAt shortTimeAgoSinceNow];
 //	[formatter setDateFormat:@"M/d"];
 //	self.entryTimestamp.text = [formatter stringFromDate:createdAtOriginalString];
 	

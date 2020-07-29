@@ -161,7 +161,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AC6EFA4124C2538100CD6600 /* User Login */ = {
+		AC6EFA4124C2538100CD6600 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
 				ACF03C9424BE6C3900BBA1D9 /* LoginViewController.h */,
@@ -169,10 +169,10 @@
 				AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */,
 				AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */,
 			);
-			path = "User Login";
+			path = UserLogin;
 			sourceTree = "<group>";
 		};
-		AC6EFA4224C253BE00CD6600 /* Main Views */ = {
+		AC6EFA4224C253BE00CD6600 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
 				AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */,
@@ -180,10 +180,10 @@
 				AC6EFA2D24BFA48300CD6600 /* ListsViewController.h */,
 				AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */,
 			);
-			path = "Main Views";
+			path = MainViews;
 			sourceTree = "<group>";
 		};
-		AC6EFA4324C253E500CD6600 /* Compose Views */ = {
+		AC6EFA4324C253E500CD6600 /* ComposeViews */ = {
 			isa = PBXGroup;
 			children = (
 				AC6EFA3924C2523000CD6600 /* ComposeEntryViewController.h */,
@@ -191,7 +191,7 @@
 				AC6EFA3C24C2526000CD6600 /* ComposeRecipeViewController.h */,
 				AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */,
 			);
-			path = "Compose Views";
+			path = ComposeViews;
 			sourceTree = "<group>";
 		};
 		ACF03C3B24BE5F1700BBA1D9 = {
@@ -282,9 +282,9 @@
 		ACF03C7E24BE5F9100BBA1D9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AC6EFA4124C2538100CD6600 /* User Login */,
-				AC6EFA4224C253BE00CD6600 /* Main Views */,
-				AC6EFA4324C253E500CD6600 /* Compose Views */,
+				AC6EFA4124C2538100CD6600 /* UserLogin */,
+				AC6EFA4224C253BE00CD6600 /* MainViews */,
+				AC6EFA4324C253E500CD6600 /* ComposeViews */,
 				AC6EFA3324C2415700CD6600 /* ProfileViewController.h */,
 				AC6EFA3424C2415700CD6600 /* ProfileViewController.m */,
 				AC6EFA3624C2441300CD6600 /* SearchViewController.h */,
