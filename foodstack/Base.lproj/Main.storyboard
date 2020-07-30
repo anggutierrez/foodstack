@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="F5y-LT-ryg">
             <objects>
-                <viewController id="MeK-NV-sTT" customClass="TimelineViewController" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalPresentationStyle="fullScreen" id="MeK-NV-sTT" customClass="TimelineViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQH-l5-9CZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,7 +633,7 @@
         <!--Lists View Controller-->
         <scene sceneID="lTd-8q-Plf">
             <objects>
-                <viewController id="qtn-sB-cZc" customClass="ListsViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="qtn-sB-cZc" customClass="ListsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fge-8A-8Tf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -731,7 +731,7 @@
         <!--Timeline-->
         <scene sceneID="WQc-L4-TFl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MCE-YD-jEt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="MCE-YD-jEt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Timeline" id="ga3-oW-lbb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nL6-dP-mmf">
@@ -750,7 +750,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="pIR-Af-sn6">
             <objects>
-                <tabBarController storyboardIdentifier="TimelineViewController" automaticallyAdjustsScrollViewInsets="NO" id="hDU-WT-h0Z" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TimelineViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hDU-WT-h0Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gxE-9N-F68"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhj-e7-sJG">
@@ -770,7 +770,7 @@
         <!--Lists-->
         <scene sceneID="Ycn-Uk-S7i">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="10b-WX-FO7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="10b-WX-FO7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lists" id="5Gl-Pd-6KP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nC9-b8-c6I">
@@ -839,8 +839,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zXg-5S-Mvb"/>
-        <segue reference="qVv-vV-Rev"/>
-        <segue reference="tgM-Dv-LVV"/>
+        <segue reference="6Ti-fS-iFC"/>
+        <segue reference="6yg-Yh-0MV"/>
+        <segue reference="1YN-jI-qJM"/>
     </inferredMetricsTieBreakers>
 </document>
