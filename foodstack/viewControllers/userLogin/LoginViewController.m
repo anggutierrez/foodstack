@@ -67,6 +67,7 @@
 }
 */
 
-// Test comment for commit to GitHub
+// Test comment for commit to GitHub,
+// Test comment part 2
 
 @end
