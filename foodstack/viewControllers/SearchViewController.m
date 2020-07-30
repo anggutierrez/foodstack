@@ -41,7 +41,7 @@
 	
 	searchQuery = [@"&query=" stringByAppendingString:searchQuery];
 	
-	NSString *numberResults = [@"&number=" stringByAppendingString:@"2"];
+	NSString *numberResults = [@"&number=" stringByAppendingString:@"10"];
 	
 	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"true"];
 	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"false"];
