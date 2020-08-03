@@ -19,9 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *calCount;
 @property (nonatomic, strong) NSString *recipeDescription;
 @property (nonatomic, strong) PFFileObject *image;
+@property (nonatomic, strong) NSArray *ingredients;
+@property (nonatomic, strong) NSNumber *rating;
 
-+ (void) postUserRecipe: ( NSString * _Nullable )recipeTitle withCalCount: ( NSNumber * _Nullable )calCount withRecipeDescription: (NSString * _Nullable )recipeDescription withImage:( UIImage * _Nullable )image withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
++ (void) postUserRecipe: ( NSString * _Nullable )recipeTitle withCalCount: ( NSNumber * _Nullable )calCount withRecipeDescription: (NSString * _Nullable )recipeDescription withImage:( UIImage * _Nullable )image withIngredients: (NSArray * _Nullable )ingredients withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 @end
 
 NS_ASSUME_NONNULL_END

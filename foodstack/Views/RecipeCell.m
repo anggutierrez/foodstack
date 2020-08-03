@@ -17,6 +17,7 @@
 
 - (void)setRecipe:(Recipe *)recipe {
 	_recipe = recipe;
+	_isAnimated = NO;
 	
 	self.recipeImageView.file = recipe.image;
 	[self.recipeImageView loadInBackground];

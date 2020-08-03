@@ -19,6 +19,7 @@
 
 - (void)setEntry:(Entry *)entry {
 	_entry = entry;
+	_isAnimated = NO;
 	//	self.photoImageView.file = recipe[@"image"];
 	//	[self.photoImageView loadInBackground];
 	

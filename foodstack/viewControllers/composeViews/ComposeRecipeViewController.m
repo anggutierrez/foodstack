@@ -60,7 +60,7 @@
 	UIImage *resized = [self resizeImage:self.recipeImageView.image withSize:CGSizeMake(150, 150)];
 	
 	if (![self _isEmpty]) {
-		[Recipe postUserRecipe:self.composeTitleField.text withCalCount:cal withRecipeDescription:self.composeDescField.text withImage:resized withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+		[Recipe postUserRecipe:self.composeTitleField.text withCalCount:cal withRecipeDescription:self.composeDescField.text withImage:resized withIngredients: (NSArray * _Nullable )nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
 			if (!error) {
 				[self dismissViewControllerAnimated:true completion:nil];
 			} else {

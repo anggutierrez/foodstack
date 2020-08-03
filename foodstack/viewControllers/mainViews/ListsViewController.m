@@ -56,8 +56,12 @@
 	}];
 }
 
-- (IBAction)didSwipe:(id)sender {
+- (IBAction)didSwipeLeft:(id)sender {
 	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
+}
+
+- (IBAction)didSwipeRight:(id)sender {
+	self.tabBarController.selectedIndex = 0;
 }
 
 - (IBAction)didTapAdd:(id)sender {
@@ -85,6 +89,16 @@
 	cell.recipe = recipe;
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(RecipeCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (cell.isAnimated) {return;}
+	
+	cell.alpha = 0.0;
+	[UIView animateWithDuration:1.0 animations:^{
+	   cell.alpha = 1.0;
+	   cell.isAnimated = YES;
+	}];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -66,11 +66,14 @@
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
 }
 
-- (IBAction)didSwipe:(id)sender {
-	if (UIGestureRecognizerStateBegan) {
-		[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
-	}
+- (IBAction)didSwipeRight:(id)sender {
+	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
+
+- (IBAction)didSwipeLeft:(id)sender {
+	self.tabBarController.selectedIndex = 1;
+}
+
 
 
 #pragma mark - Navigation
@@ -93,6 +96,16 @@
 	cell.entry = entry;
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(EntryCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (cell.isAnimated) {return;}
+	
+	cell.alpha = 0.0;
+	[UIView animateWithDuration:1.0 animations:^{
+	   cell.alpha = 1.0;
+	   cell.isAnimated = YES;
+	}];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
