@@ -18,11 +18,11 @@
 - (void)setRecipe:(Recipe *)recipe {
 	_recipe = recipe;
 	
-	self.recipeImageView.file = recipe[@"image"];
+	self.recipeImageView.file = recipe.image;
 	[self.recipeImageView loadInBackground];
 	
-	self.recipeTitle.text = recipe[@"recipeTitle"];
-	self.recipeDescription.text = recipe[@"recipeDescription"];
+	self.recipeTitle.text = recipe.recipeTitle;
+	self.recipeDescription.text = recipe.recipeDescription;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

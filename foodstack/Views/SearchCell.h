@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchCell : UITableViewCell
+@property (strong, nonatomic) Recipe *recipe;
 @property (weak, nonatomic) IBOutlet UIImageView *searchImageView;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *searchIngredientsLabel;

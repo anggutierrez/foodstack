@@ -12,6 +12,7 @@
 #import "SceneDelegate.h"
 #import "RecipeCell.h"
 #import "Recipe.h"
+#import "Utils.h"
 
 @interface ListsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,7 +56,7 @@
 	}];
 }
 
-- (IBAction)didTapProfile:(id)sender {
+- (IBAction)didSwipe:(id)sender {
 	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
 

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreLocation;
+@import MapKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ComposeEntryViewController : UIViewController
+@interface ComposeEntryViewController : UIViewController <CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *location;
 
 @end
 

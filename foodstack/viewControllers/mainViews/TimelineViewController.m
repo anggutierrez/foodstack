@@ -10,8 +10,10 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
+#import "MapViewController.h"
 #import "EntryCell.h"
 #import "Entry.h"
+#import "Utils.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -56,29 +58,33 @@
 	}];
 }
 
-- (IBAction)didTapProfile:(id)sender {
-	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
-
-}
-
 - (IBAction)didTapAdd:(id)sender {
 	[self performSegueWithIdentifier:@"AddSegue" sender:nil];
 }
 
 - (IBAction)didTapSearch:(id)sender {
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
-
 }
 
-/*
+- (IBAction)didSwipe:(id)sender {
+	if (UIGestureRecognizerStateBegan) {
+		[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
+	}
+}
+
+
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	if ([segue.identifier isEqual:@"LocationSegue"]) {
+		UITableViewCell *tappedCell = sender;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+		Entry *entry = self.entries[indexPath.row];
+		
+		UINavigationController *navVC = [segue destinationViewController];
+		MapViewController *mapvc = navVC.topViewController;
+		mapvc.entry = entry;
+	}
 }
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	EntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EntryCell" forIndexPath:indexPath];

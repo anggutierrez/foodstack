@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Utils : NSObject
 + (NSNumber *) stringToNumber:(NSString *)origString;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
++ (NSString *) stringFromDouble:(double)myDouble;
 
 @end
 

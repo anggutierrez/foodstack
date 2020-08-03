@@ -22,7 +22,6 @@
 	
 	PFUser *user = [PFUser currentUser];
 	self.profileUserLabel.text = user.username;
-	self.profileImageView.image;
 }
 
 - (IBAction)didTapLogout:(id)sender {

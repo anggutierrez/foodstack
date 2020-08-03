@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MapViewController : UIViewController
-
+@interface MapViewController : UIViewController <CLLocationManagerDelegate>
+@property (nonatomic, strong) Entry *entry;
 @end
 
 NS_ASSUME_NONNULL_END

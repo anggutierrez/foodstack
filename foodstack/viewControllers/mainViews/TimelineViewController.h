@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreLocation;
+@import MapKit;
 
 NS_ASSUME_NONNULL_BEGIN
 

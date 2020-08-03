@@ -11,7 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <StripHTML/NSString+StripHTML.h>
 
-@interface SearchViewController () <UITableViewDelegate, UITableViewDelegate>
+@interface SearchViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (nonatomic, strong) NSArray *recipes;
@@ -41,7 +41,7 @@
 	
 	searchQuery = [@"&query=" stringByAppendingString:searchQuery];
 	
-	NSString *numberResults = [@"&number=" stringByAppendingString:@"10"];
+	NSString *numberResults = [@"&number=" stringByAppendingString:@"3"];
 	
 	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"true"];
 	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"false"];
@@ -73,6 +73,8 @@
 	SearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
 	
 	NSDictionary *recipe = self.recipes[indexPath.row];
+	cell.recipe = self.recipes[indexPath.row];
+	
 	cell.searchRecipeLabel.text = recipe[@"title"];
 	NSString *taglessString = [recipe[@"summary"] removeTags];
 	cell.searchIngredientsLabel.text = taglessString;

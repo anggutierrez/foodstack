@@ -18,6 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *entryTimestamp;
 @property (weak, nonatomic) IBOutlet UILabel *entryDescription;
 @property (weak, nonatomic) IBOutlet UILabel *entryTitle;
+@property (weak, nonatomic) IBOutlet UIButton *entryLocation;
+@property (strong, nonatomic) NSString *entryLatitude;
+@property (strong, nonatomic) NSString *entryLongitude;
+
+
 
 - (void)setEntry:(Entry *)entry;
 

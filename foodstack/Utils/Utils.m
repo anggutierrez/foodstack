@@ -18,6 +18,12 @@
 	return [calorieFormatter numberFromString:origString];
 }
 
++ (NSString *) stringFromDouble:(double)myDouble {
+	NSNumber *myDoubleNumber = [NSNumber numberWithDouble:myDouble];
+	
+	return [myDoubleNumber stringValue];
+}
+
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
     // check if image is not nil
     if (!image) {

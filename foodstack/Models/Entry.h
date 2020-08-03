@@ -15,8 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
-@property(nonatomic, strong) NSString *entryTitle;
+@property (nonatomic, strong) NSString *entryTitle;
+@property (nonatomic, strong) NSString *entryLongitude;
+@property (nonatomic, strong) NSString *entryLatitude;
 @property (nonatomic, strong) NSString *entryDescription;
+
 @property (nonatomic, strong) NSNumber *calCount;
 @property (nonatomic, strong) PFFileObject *image;
 
@@ -24,6 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 	   withDescription: ( NSString * _Nullable )entryDescription
 		  withCalCount: ( NSNumber * _Nullable )calCount
 		withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
++ (void) postUserEntry: ( NSString * _Nullable )entryTitle
+withDescription: ( NSString * _Nullable )entryDescription
+   withCalCount: ( NSNumber * _Nullable )calCount withLatitude: (NSString * _Nullable )latitude withLongitude: (NSString * _Nullable)longitude
+ withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 

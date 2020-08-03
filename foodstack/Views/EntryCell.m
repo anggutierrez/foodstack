@@ -7,6 +7,7 @@
 //
 
 #import "EntryCell.h"
+#import <GoogleMaps/GoogleMaps.h>
 #import "DateTools.h"
 
 @implementation EntryCell
@@ -24,6 +25,9 @@
 	self.entryTitle.text = entry.entryTitle;
 	self.entryDescription.text = entry.entryDescription;
 	
+	self.entryLatitude = entry.entryLatitude;
+	self.entryLongitude = entry.entryLongitude;
+	
 	NSString *calories = [entry.calCount stringValue];
 	self.entryCalories.text = calories;
 	
@@ -34,6 +38,11 @@
 	self.entryTimestamp.text = [createdAt shortTimeAgoSinceNow];
 //	[formatter setDateFormat:@"M/d"];
 //	self.entryTimestamp.text = [formatter stringFromDate:createdAtOriginalString];
+	
+}
+
+- (void) reverseGeoCode {
+//	GMSGeocoder *geoCoder;
 	
 }
 

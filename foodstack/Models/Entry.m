@@ -16,6 +16,8 @@
 @dynamic calCount;
 @dynamic entryTitle;
 @dynamic entryDescription;
+@dynamic entryLongitude;
+@dynamic entryLatitude;
 
 @dynamic image;
 
@@ -32,6 +34,23 @@
 	newEntry.entryTitle = entryTitle;
 	newEntry.entryDescription = entryDescription;
 	newEntry.calCount = calCount;
+    newEntry.author = [PFUser currentUser];
+    
+    [newEntry saveInBackgroundWithBlock: completion];
+}
+
++ (void) postUserEntry: ( NSString * _Nullable )entryTitle
+	   withDescription: ( NSString * _Nullable )entryDescription
+		  withCalCount: ( NSNumber * _Nullable )calCount
+		  withLatitude: (NSString * _Nullable )entryLatitude
+		 withLongitude: (NSString * _Nullable)entryLongitude
+		withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    Entry *newEntry = [Entry new];
+	newEntry.entryTitle = entryTitle;
+	newEntry.entryDescription = entryDescription;
+	newEntry.calCount = calCount;
+	newEntry.entryLatitude = entryLatitude;
+	newEntry.entryLongitude = entryLongitude;
     newEntry.author = [PFUser currentUser];
     
     [newEntry saveInBackgroundWithBlock: completion];

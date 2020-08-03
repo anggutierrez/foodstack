@@ -8,6 +8,10 @@
 
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "Utils.h"
+#import "EntryCell.h"
+#import "TimelineViewController.h"
+
 
 @interface MapViewController ()
 
@@ -18,20 +22,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	double latitude = _entry.entryLatitude.doubleValue;
+	double longitude = _entry.entryLongitude.doubleValue;
 	
-	GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
-															longitude:151.20
-																 zoom:6];
-	GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.frame camera:camera];
-	mapView.myLocationEnabled = YES;
+	GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
+															longitude:longitude
+																 zoom:11];
+	GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
+	
+	// Set back to Yes if I want the location dot
+	mapView.myLocationEnabled = NO;
+	mapView.settings.myLocationButton = NO;
+	
 	[self.view addSubview:mapView];
 
 	// Creates a marker in the center of the map.
 	GMSMarker *marker = [[GMSMarker alloc] init];
-	marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
-	marker.title = @"Sydney";
-	marker.snippet = @"Australia";
+	marker.position = CLLocationCoordinate2DMake(latitude, longitude);
+	marker.title = @"Ate here!";
+	marker.snippet = @"Lasagna";
 	marker.map = mapView;
+}
+
+- (IBAction)didTapBack:(id)sender {
+	[self dismissViewControllerAnimated:true completion:nil];
 }
 
 /*

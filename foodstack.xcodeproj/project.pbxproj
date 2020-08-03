@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39485A0F4D215FF4794F01FE /* Pods_foodstack_foodstackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */; };
 		7D01378D66811BC4DDB4EF04 /* Pods_foodstack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */; };
+		AC0A7A2C24D47A6D0085D57B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0A7A2B24D47A6D0085D57B /* CoreLocation.framework */; };
+		AC0A7A2E24D47A740085D57B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0A7A2D24D47A740085D57B /* MapKit.framework */; };
 		AC38AABB24D1F06800E3FDF5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABA24D1F06800E3FDF5 /* Utils.m */; };
 		AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */; };
 		AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */; };
@@ -22,7 +24,6 @@
 		ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7C59224D0DF0A00DD5590 /* MapViewController.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
-		ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */; };
 		ACF03C5224BE5F1700BBA1D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF03C5024BE5F1700BBA1D9 /* Main.storyboard */; };
 		ACF03C5424BE5F1800BBA1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF03C5324BE5F1800BBA1D9 /* Assets.xcassets */; };
 		ACF03C5724BE5F1800BBA1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF03C5524BE5F1800BBA1D9 /* LaunchScreen.storyboard */; };
@@ -63,6 +64,8 @@
 		588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5903AC8CF467308AF707C74C /* Pods-foodstack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodstack.release.xcconfig"; path = "Target Support Files/Pods-foodstack/Pods-foodstack.release.xcconfig"; sourceTree = "<group>"; };
 		6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodstack_foodstackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0A7A2B24D47A6D0085D57B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AC0A7A2D24D47A740085D57B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AC38AAB924D1F06800E3FDF5 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		AC38AABA24D1F06800E3FDF5 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsViewController.h; sourceTree = "<group>"; };
@@ -90,8 +93,6 @@
 		ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ACF03C4A24BE5F1700BBA1D9 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		ACF03C4D24BE5F1700BBA1D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ACF03C5124BE5F1700BBA1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACF03C5324BE5F1800BBA1D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACF03C5624BE5F1800BBA1D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0A7A2C24D47A6D0085D57B /* CoreLocation.framework in Frameworks */,
+				AC0A7A2E24D47A740085D57B /* MapKit.framework in Frameworks */,
 				7D01378D66811BC4DDB4EF04 /* Pods_foodstack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +150,8 @@
 		181F1EACF388591EEFD4A981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC0A7A2D24D47A740085D57B /* MapKit.framework */,
+				AC0A7A2B24D47A6D0085D57B /* CoreLocation.framework */,
 				588CA5613F39B9CFDC54F93A /* Pods_foodstack.framework */,
 				6EAC23CD8270A9CB1164A16B /* Pods_foodstack_foodstackUITests.framework */,
 				278BB8CAB9933E47D8A3694D /* Pods_foodstackTests.framework */,
@@ -246,8 +251,6 @@
 				ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */,
 				ACF03C4A24BE5F1700BBA1D9 /* SceneDelegate.h */,
 				ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */,
-				ACF03C4D24BE5F1700BBA1D9 /* ViewController.h */,
-				ACF03C4E24BE5F1700BBA1D9 /* ViewController.m */,
 				ACF03C5324BE5F1800BBA1D9 /* Assets.xcassets */,
 				ACF03C5824BE5F1800BBA1D9 /* Info.plist */,
 				ACF03C5924BE5F1800BBA1D9 /* main.m */,
@@ -594,7 +597,6 @@
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
 				AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */,
 				AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */,
-				ACF03C4F24BE5F1700BBA1D9 /* ViewController.m in Sources */,
 				AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
 				AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */,
