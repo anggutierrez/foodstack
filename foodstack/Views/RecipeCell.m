@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+	
 }
 
 - (void)setRecipe:(Recipe *)recipe {
@@ -31,5 +32,4 @@
 
     // Configure the view for the selected state
 }
-
 @end

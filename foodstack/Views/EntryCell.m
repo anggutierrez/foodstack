@@ -37,6 +37,7 @@
 	
 	[self reverseGeoCode];
 	
+	
 	NSDate *createdAt = [entry createdAt];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	// Configure the input format to parse the date string
@@ -48,7 +49,6 @@
 }
 
 - (void) reverseGeoCode {
-	NSLog(@"Reverse Geocoding");
 	GMSGeocoder *geoCoder;
 
 	[geoCoder reverseGeocodeCoordinate:CLLocationCoordinate2DMake([_entryLatitude doubleValue], [_entryLongitude doubleValue]) completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {

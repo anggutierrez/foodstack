@@ -8,6 +8,7 @@
 
 #import "ListsViewController.h"
 #import "LoginViewController.h"
+#import "RecipeDetailsViewController.h"
 #import "Parse/Parse.h"
 #import "SceneDelegate.h"
 #import "RecipeCell.h"
@@ -85,15 +86,21 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	if ([segue.identifier isEqual:@"RecipeDetailsSegue"]) {
+		UITableViewCell *tappedCell = sender;
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+		Recipe *recipe = self.recipes[indexPath.row];
+		
+		RecipeDetailsViewController *detailsvc = [segue destinationViewController];
+		detailsvc.recipe = recipe;
+	}
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	RecipeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];

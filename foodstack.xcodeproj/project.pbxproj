@@ -21,6 +21,7 @@
 		AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3724C2441300CD6600 /* SearchViewController.m */; };
 		AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */; };
 		AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */; };
+		AC7960F524D9E53B0093A85A /* RecipeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7960F424D9E53B0093A85A /* RecipeDetailsViewController.m */; };
 		ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7C59224D0DF0A00DD5590 /* MapViewController.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
@@ -86,6 +87,8 @@
 		AC6EFA3A24C2523000CD6600 /* ComposeEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeEntryViewController.m; sourceTree = "<group>"; };
 		AC6EFA3C24C2526000CD6600 /* ComposeRecipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeRecipeViewController.h; sourceTree = "<group>"; };
 		AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeRecipeViewController.m; sourceTree = "<group>"; };
+		AC7960F324D9E53B0093A85A /* RecipeDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeDetailsViewController.h; sourceTree = "<group>"; };
+		AC7960F424D9E53B0093A85A /* RecipeDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailsViewController.m; sourceTree = "<group>"; };
 		ACA7C59124D0DF0A00DD5590 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		ACA7C59224D0DF0A00DD5590 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		ACF03C4424BE5F1700BBA1D9 /* foodstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +315,8 @@
 				AC6EFA3724C2441300CD6600 /* SearchViewController.m */,
 				ACA7C59124D0DF0A00DD5590 /* MapViewController.h */,
 				ACA7C59224D0DF0A00DD5590 /* MapViewController.m */,
+				AC7960F324D9E53B0093A85A /* RecipeDetailsViewController.h */,
+				AC7960F424D9E53B0093A85A /* RecipeDetailsViewController.m */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF03C8D24BE620200BBA1D9 /* RecipeCell.m in Sources */,
+				AC7960F524D9E53B0093A85A /* RecipeDetailsViewController.m in Sources */,
 				ACF03C9324BE636200BBA1D9 /* Recipe.m in Sources */,
 				AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */,
 				ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */,

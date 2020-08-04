@@ -48,7 +48,7 @@
 }
 
 - (BOOL) _isValidInput {
-	if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""] || [self.emailField.text isEqual:@""]) {
+	if (!self.usernameField.hasText || !self.passwordField.hasText || !self.emailField.hasText) {
 			UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Incomplete Form" message:@"Fill in the required fields." preferredStyle:(UIAlertControllerStyleAlert)];
 			
 			UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

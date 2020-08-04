@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitle;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDescription;
 @property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *recipeRating;
 
 @property (assign, nonatomic) BOOL isAnimated;
 
