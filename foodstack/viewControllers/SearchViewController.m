@@ -41,7 +41,7 @@
 	
 	searchQuery = [@"&query=" stringByAppendingString:searchQuery];
 	
-	NSString *numberResults = [@"&number=" stringByAppendingString:@"3"];
+	NSString *numberResults = [@"&number=" stringByAppendingString:@"1"];
 	
 	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"true"];
 	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"false"];
@@ -83,7 +83,7 @@
     NSURL *imageURL = [NSURL URLWithString:imageURLString];
 	
 	[cell.searchImageView setImageWithURL:imageURL];
-	
+
 	return cell;
 }
 

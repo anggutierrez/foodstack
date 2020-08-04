@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL isAnimated;
 @property (strong, nonatomic) NSString *entryLatitude;
 @property (strong, nonatomic) NSString *entryLongitude;
+@property (weak, nonatomic) IBOutlet UILabel *entryLocation;
 
 
 

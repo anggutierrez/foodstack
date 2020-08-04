@@ -8,6 +8,7 @@
 
 #import "ComposeRecipeViewController.h"
 #import "Recipe.h"
+#import "Utils.h"
 
 @interface ComposeRecipeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *composeTitleField;
@@ -53,9 +54,7 @@
 }
 
 - (IBAction)onTapSave:(id)sender {
-	NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-	f.numberStyle = NSNumberFormatterDecimalStyle;
-	NSNumber *cal = [f numberFromString:self.composeCaloriesField.text];
+	NSNumber *cal = [Utils stringToNumber:self.composeCaloriesField.text];
 	
 	UIImage *resized = [self resizeImage:self.recipeImageView.image withSize:CGSizeMake(150, 150)];
 	
