@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Recipe.h"
-#import "Entry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

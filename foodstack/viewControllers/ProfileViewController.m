@@ -10,6 +10,8 @@
 #import "Parse/Parse.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
+#import "Recipe.h"
+#import "Entry.h"
 
 @interface ProfileViewController ()
 
@@ -22,6 +24,8 @@
 	
 	PFUser *user = [PFUser currentUser];
 	self.profileUserLabel.text = user.username;
+	
+	[self recommend];
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -39,21 +43,16 @@
 - (void) recommend {
 	//	Recipe *recommendedRecipe;
 	
-	// Parse per user basis
-	
 	// Query recipes from Parse database
+	NSSet *recipes = [NSSet setWithArray:[self queryEntries]];
 	
 	// Query entries from Parse database
-	// Put entries eaten wthin the week a different [set] - "hush"
+//	NSSet *entries = [NSSet setWithArray:_entries];
+	
 	// Remove recipes at intersect with entries
+	//	NSSet *filteredSet =
+	
 	// Bubble sort
-	
-	// How does set work in objc
-	
-	// What is set
-	// Basic logic / understanding for set
-	// How to implement
-	
 	
 	// Starting from highest rated - Loop down the array and crosscheck each recipe to every entry
 		// If a recipe matches title / keywords from the past week: pop the recipe and move on to the next recipe
@@ -65,6 +64,52 @@
 	
 	// Recipes are recommended back to user in table view
 }
+
+- (NSMutableArray *)queryEntries {
+	__block NSMutableArray *myEntries;
+	PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
+	[query includeKey:@"author"];
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
+		if (entries != nil) {
+			myEntries = (NSMutableArray *)entries;
+		} else {
+			NSLog(@"%@", error.localizedDescription);
+		}
+	}];
+	NSInteger count = [myEntries count];
+	for (NSInteger index = (count - 1); index >= 0; index--) {
+		Entry *entry = myEntries[index];
+		if (entry.author.username != [PFUser currentUser].username) {
+			[myEntries removeObjectAtIndex:index];
+		}
+	}
+	
+	return myEntries;
+}
+
+/*
+- (void)queryRecipes {
+	PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+	[query includeKey:@"author"];
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
+		if (recipes != nil) {
+			self.recipes = (NSMutableArray *) recipes;
+		} else {
+			NSLog(@"%@", error.localizedDescription);
+		}
+		
+		NSInteger count = [self.recipes count];
+		for (NSInteger index = (count - 1); index >= 0; index--) {
+			Recipe *recipe = self.recipes[index];
+			if (recipe.author.username != [PFUser currentUser].username) {
+				[self.recipes removeObjectAtIndex:index];
+			}
+		}
+	}];
+}
+ */
 
 /*
 #pragma mark - Navigation
