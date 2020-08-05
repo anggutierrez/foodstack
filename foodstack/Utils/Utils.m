@@ -18,6 +18,17 @@
 	return [calorieFormatter numberFromString:origString];
 }
 
++ (NSString *) decimalAccuracy:(double)num {
+	NSNumber *newNum = [NSNumber numberWithDouble:num];
+	
+	NSNumberFormatter *numberformatter = [[NSNumberFormatter alloc] init];
+	numberformatter.numberStyle = NSNumberFormatterDecimalStyle;
+	numberformatter.minimumFractionDigits = 2;
+	numberformatter.maximumFractionDigits = 2;
+	
+	return [numberformatter stringFromNumber:newNum];
+}
+
 + (NSString *) stringFromDouble:(double)myDouble {
 	NSNumber *myDoubleNumber = [NSNumber numberWithDouble:myDouble];
 	
@@ -38,5 +49,7 @@
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
+
+// Move geocoder function to util class
 
 @end

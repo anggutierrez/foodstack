@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailRecipeName;
 @property (weak, nonatomic) IBOutlet UILabel *detailRating;
 @property (weak, nonatomic) IBOutlet UITextField *detailRatingField;
+@property (weak, nonatomic) IBOutlet UILabel *detailSummary;
+// Add in a spot for ingredients and its respective array
 
 @end
 
@@ -29,8 +31,7 @@
 	
 	self.detailRecipeName.text = _recipe.recipeTitle;
 	self.detailRating.text = [_recipe.rating stringValue];
-	NSLog(@"%@", _recipe.postID);
-	
+	self.detailSummary.text = _recipe.recipeDescription;
 }
 
 - (IBAction)didTapUpdate:(id)sender {
@@ -40,7 +41,6 @@
 		
 		[query getObjectInBackgroundWithId:_recipe.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
 			if (object) {
-				NSLog(@"changing the object rating!");
 				object[@"rating"] = [Utils stringToNumber:self.detailRatingField.text];
 				[object saveInBackground];
 			} else {

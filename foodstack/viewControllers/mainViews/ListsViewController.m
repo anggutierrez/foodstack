@@ -43,17 +43,32 @@
 	PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
 	[query orderByDescending: @"createdAt"];
 	query.limit = 20;
+	[query includeKey:@"author"];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
 		if (recipes != nil) {
 			self.recipes = (NSMutableArray *) recipes;
-			
-			[self.tableView reloadData];
 		} else {
 			NSLog(@"%@", error.localizedDescription);
 		}
+		[self currentUserRecipes];
 		[self.refreshControl endRefreshing];
 	}];
+}
+
+- (void) currentUserRecipes {
+	NSInteger count = [self.recipes count];
+	for (NSInteger index = (count - 1); index >= 0; index--) {
+		Recipe *recipe= self.recipes[index];
+		if (recipe.author.username != [PFUser currentUser].username) {
+			[self.recipes removeObjectAtIndex:index];
+		}
+	}
+	[self.tableView reloadData];
+}
+
+- (IBAction)didTapProfile:(id)sender {
+	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
 
 - (IBAction)didSwipeLeft:(id)sender {

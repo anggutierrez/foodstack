@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSNumber *) stringToNumber:(NSString *)origString;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 + (NSString *) stringFromDouble:(double)myDouble;
++ (NSString *) decimalAccuracy:(double)num;
 
 @end
 

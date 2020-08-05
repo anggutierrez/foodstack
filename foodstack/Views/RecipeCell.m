@@ -25,6 +25,8 @@
 	
 	self.recipeTitle.text = recipe.recipeTitle;
 	self.recipeDescription.text = recipe.recipeDescription;
+	
+	self.recipeRating.text = [recipe.rating stringValue];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

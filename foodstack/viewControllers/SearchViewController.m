@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "SearchCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "Utils.h"
 #import <StripHTML/NSString+StripHTML.h>
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -41,10 +42,10 @@
 	
 	searchQuery = [@"&query=" stringByAppendingString:searchQuery];
 	
-	NSString *numberResults = [@"&number=" stringByAppendingString:@"1"];
+	NSString *numberResults = [@"&number=" stringByAppendingString:@"15"];
 	
-	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"true"];
-	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"false"];
+	NSString *includeRecipeInformation = [@"&addRecipeInformation=" stringByAppendingString:@"false"];
+	NSString *includeRecipeNutrition = [@"&addRecipeNutrition=" stringByAppendingString:@"true"];
 	
 	NSString *includeExtendedInformation = [includeRecipeInformation stringByAppendingString:includeRecipeNutrition];
 	
@@ -78,6 +79,7 @@
 	cell.searchRecipeLabel.text = recipe[@"title"];
 	NSString *taglessString = [recipe[@"summary"] removeTags];
 	cell.searchIngredientsLabel.text = taglessString;
+	cell.searchCalories.text = [recipe[@"nutrition"][@"nutrients"][0][@"amount"] stringValue];
 	
     NSString *imageURLString = recipe[@"image"];
     NSURL *imageURL = [NSURL URLWithString:imageURLString];

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+#import "Entry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *profileUserLabel;
 
 - (void) recommend;
-
 @end
 
 NS_ASSUME_NONNULL_END

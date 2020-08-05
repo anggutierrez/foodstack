@@ -27,7 +27,7 @@
 	
 	GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
 															longitude:longitude
-																 zoom:11];
+																 zoom:9];
 	GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
 	
 	// Set back to Yes if I want the location dot

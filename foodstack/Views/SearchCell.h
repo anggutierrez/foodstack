@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *searchImageView;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *searchIngredientsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *searchCalories;
 
 
 @end

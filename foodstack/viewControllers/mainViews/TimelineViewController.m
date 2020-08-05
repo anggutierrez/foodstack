@@ -44,17 +44,28 @@
 	PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
 	[query orderByDescending: @"createdAt"];
 	query.limit = 20;
+	[query includeKey:@"author"];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
 		if (entries != nil) {
 			self.entries = (NSMutableArray *) entries;
-			
-			[self.tableView reloadData];
 		} else {
 			NSLog(@"%@", error.localizedDescription);
 		}
+		[self currentUserEntries];
 		[self.refreshControl endRefreshing];
 	}];
+}
+
+- (void) currentUserEntries {
+	NSInteger count = [self.entries count];
+	for (NSInteger index = (count - 1); index >= 0; index--) {
+		Entry *entry = self.entries[index];
+		if (entry.author.username != [PFUser currentUser].username) {
+			[self.entries removeObjectAtIndex:index];
+		}
+	}
+	[self.tableView reloadData];
 }
 
 - (IBAction)didTapAdd:(id)sender {
@@ -63,6 +74,10 @@
 
 - (IBAction)didTapSearch:(id)sender {
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
+}
+
+- (IBAction)didTapProfile:(id)sender {
+	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
 
 - (IBAction)didSwipeRight:(id)sender {
@@ -91,6 +106,10 @@
 	
 	Entry *entry = self.entries[indexPath.row];
 	cell.entry = entry;
+	
+//	if (entry.author.username == [PFUser currentUser].username) {
+//		cell.entry = entry;
+//	}
 	
 	return cell;
 }
