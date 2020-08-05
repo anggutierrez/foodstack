@@ -29,14 +29,10 @@
 	self.entryLatitude = entry.entryLatitude;
 	self.entryLongitude = entry.entryLongitude;
 	
-	// calls ReverseGeocode
-	// self.entryLocation =
-	
 	NSString *calories = [entry.calCount stringValue];
 	self.entryCalories.text = calories;
 	
 	[self reverseGeoCode];
-	
 	
 	NSDate *createdAt = [entry createdAt];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -49,9 +45,9 @@
 }
 
 - (void) reverseGeoCode {
-	GMSGeocoder *geoCoder;
+	GMSGeocoder *geoCoder = [GMSGeocoder geocoder];
 
-	[geoCoder reverseGeocodeCoordinate:CLLocationCoordinate2DMake([_entryLatitude doubleValue], [_entryLongitude doubleValue]) completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {
+	[geoCoder reverseGeocodeCoordinate:	CLLocationCoordinate2DMake([_entryLatitude doubleValue], [_entryLongitude doubleValue]) completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {
 		if (!error) {
 			self.entryLocation.text = response.firstResult.locality;
 		}

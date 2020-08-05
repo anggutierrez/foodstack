@@ -46,7 +46,6 @@
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
 		if (recipes != nil) {
-			NSLog(@"😎😎😎 Successfully loaded recipe list");
 			self.recipes = (NSMutableArray *) recipes;
 			
 			[self.tableView reloadData];
@@ -72,20 +71,6 @@
 - (IBAction)didTapSearch:(id)sender {
 	[self performSegueWithIdentifier:@"SearchSegue" sender:nil];
 }
-
-- (void) postTestRecipe {
-	NSArray *arr = [NSArray arrayWithObjects:@"Bread", @"Sugar", @"Milk", nil];
-	[Recipe postUserRecipe:@"Churros" withCalCount:[NSNumber numberWithInt:120] withRecipeDescription:@"Crunchy churros sprinkled with real cane sugar" withImage:nil withIngredients:arr withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-		
-	}];
-}
-
-- (IBAction)didTapTest:(id)sender {
-	NSLog(@"calling test!");
-	[self postTestRecipe];
-}
-
-
 
 #pragma mark - Navigation
 

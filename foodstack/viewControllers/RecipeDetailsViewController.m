@@ -29,18 +29,30 @@
 	
 	self.detailRecipeName.text = _recipe.recipeTitle;
 	self.detailRating.text = [_recipe.rating stringValue];
+	NSLog(@"%@", _recipe.postID);
 	
 }
 
 - (IBAction)didTapUpdate:(id)sender {
-	
+	if ([self _isValidInput]) {
+		PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+		
+		
+		[query getObjectInBackgroundWithId:_recipe.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+			if (object) {
+				NSLog(@"changing the object rating!");
+				object[@"rating"] = [Utils stringToNumber:self.detailRatingField.text];
+				[object saveInBackground];
+			} else {
+				NSLog(@"%@", error);
+			}
+		}];
+	}
 }
 
 - (BOOL) _isValidInput {
 	NSNumber *rating = [Utils stringToNumber:self.detailRatingField.text];
 	if (self.detailRatingField.hasText && rating != nil) {
-		
-		
 		return YES;
 		} else {
 			UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Incomplete Form" message:@"Fill in the required fields." preferredStyle:(UIAlertControllerStyleAlert)];

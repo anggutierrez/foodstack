@@ -47,7 +47,6 @@
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
 		if (entries != nil) {
-			NSLog(@"😎😎😎 Successfully loaded entries");
 			self.entries = (NSMutableArray *) entries;
 			
 			[self.tableView reloadData];
@@ -73,8 +72,6 @@
 - (IBAction)didSwipeLeft:(id)sender {
 	self.tabBarController.selectedIndex = 1;
 }
-
-
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

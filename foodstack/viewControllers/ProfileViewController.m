@@ -25,8 +25,6 @@
 }
 
 - (IBAction)didTapLogout:(id)sender {
-	NSLog(@"Logout getting called.");
-	
 	SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
 	
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -39,17 +37,6 @@
 }
 
 - (void) recommend {
-	// Look through database and sort recipes by rating
-
-	// Look through the top 3 recipes (ratings-wise)
-	// Look through the 10 most recent entries and see if a recipe is not mentioned
-	
-	// Recommend a recipe that hasn't been eaten recently
-	// if more than one, recommend a recipe
-	
-	// STRETCH: Recommend a food from the spoonacular API based on the ingredients of top-rated foods
-	
-	
 	
 }
 
