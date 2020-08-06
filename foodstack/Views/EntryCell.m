@@ -32,7 +32,7 @@
 	NSString *calories = [entry.calCount stringValue];
 	self.entryCalories.text = calories;
 	
-	[self reverseGeoCode];
+//	[self reverseGeoCode];
 	
 	NSDate *createdAt = [entry createdAt];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -44,6 +44,7 @@
 	
 }
 
+/*
 - (void) reverseGeoCode {
 	GMSGeocoder *geoCoder = [GMSGeocoder geocoder];
 
@@ -53,6 +54,7 @@
 		}
 	}];
 }
+ */
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -7,13 +7,15 @@
 //
 
 #import "ProfileViewController.h"
-#import "Parse/Parse.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import "Recipe.h"
 #import "Entry.h"
+#import "RecommendationCell.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *topRecipes;
 
 @end
 
@@ -21,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.tableView.dataSource = self;
+	self.tableView.delegate = self;
+		self.tableView.rowHeight = 120;
 	
 	PFUser *user = [PFUser currentUser];
 	self.profileUserLabel.text = user.username;
@@ -43,73 +49,55 @@
 - (void) recommend {
 	//	Recipe *recommendedRecipe;
 	
-	// Query recipes from Parse database
-	NSSet *recipes = [NSSet setWithArray:[self queryEntries]];
+	// Recipes turn into NSSet
+	NSSet *recipes = [NSSet setWithArray:(NSArray *)self.recipes];
 	
-	// Query entries from Parse database
-//	NSSet *entries = [NSSet setWithArray:_entries];
+	// Filter out entries older than 1 week
+	// [self newestEntries];
 	
-	// Remove recipes at intersect with entries
-	//	NSSet *filteredSet =
+	// Entries turn into NSSet
+	NSSet *entries = [NSSet setWithArray:(NSArray *)self.entries];
+	
+	// Remove recipes that share a name with entries name
+	NSSet *filteredSet = recipes; // - entries;
 	
 	// Bubble sort
-	
-	// Starting from highest rated - Loop down the array and crosscheck each recipe to every entry
-		// If a recipe matches title / keywords from the past week: pop the recipe and move on to the next recipe
-	
-	// the top 3 recipes that weren't removed are placed in another array
+	[self bubbleSort:filteredSet];
 	
 	// STRETCH: Top 3 Recipes are checked to find repeating ingredients
 		// Will then do search for most used ingredients and return top 3 results from spoonacular API
 	
 	// Recipes are recommended back to user in table view
+	[self.tableView reloadData];
 }
 
-- (NSMutableArray *)queryEntries {
-	__block NSMutableArray *myEntries;
-	PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
-	[query includeKey:@"author"];
+- (void) bubbleSort:(NSSet *)set {
+	NSMutableArray *arr = [NSMutableArray arrayWithArray:[set allObjects]];
 	
-	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
-		if (entries != nil) {
-			myEntries = (NSMutableArray *)entries;
-		} else {
-			NSLog(@"%@", error.localizedDescription);
-		}
-	}];
-	NSInteger count = [myEntries count];
-	for (NSInteger index = (count - 1); index >= 0; index--) {
-		Entry *entry = myEntries[index];
-		if (entry.author.username != [PFUser currentUser].username) {
-			[myEntries removeObjectAtIndex:index];
+	for (int index = 0; index < arr.count - 1; index++) {
+		for (int j = 0; j < (arr.count - 1 - index); j++) {
+			Recipe *recipe1 = arr[j];
+			Recipe *recipe2 = arr[j + 1];
+			if (recipe1.rating > recipe2.rating) {
+				// Check if this is passing by reference
+				[self swapRecipe:arr[j] withSecondRecipe:arr[j + 1]];
+			}
 		}
 	}
 	
-	return myEntries;
+	// Get the top 3 objects from the first array
+	id objects[] = {arr[arr.count - 1], arr[arr.count - 2], arr[arr.count - 3]};
+	NSUInteger count = sizeof(objects) / sizeof(id);
+	_topRecipes = [NSArray arrayWithObjects:objects count:count];
 }
 
-/*
-- (void)queryRecipes {
-	PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
-	[query includeKey:@"author"];
+- (void) swapRecipe:(Recipe *)recipe1 withSecondRecipe:(Recipe *)recipe2 {
+	Recipe *tempRecipe = recipe1;
 	
-	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
-		if (recipes != nil) {
-			self.recipes = (NSMutableArray *) recipes;
-		} else {
-			NSLog(@"%@", error.localizedDescription);
-		}
-		
-		NSInteger count = [self.recipes count];
-		for (NSInteger index = (count - 1); index >= 0; index--) {
-			Recipe *recipe = self.recipes[index];
-			if (recipe.author.username != [PFUser currentUser].username) {
-				[self.recipes removeObjectAtIndex:index];
-			}
-		}
-	}];
+	recipe1 = recipe2;
+	
+	recipe2 = tempRecipe;
 }
- */
 
 /*
 #pragma mark - Navigation
@@ -120,5 +108,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+	RecommendationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecommendationCell" forIndexPath:indexPath];
+	
+	NSDictionary *recipe = self.topRecipes[indexPath.row];
+	
+	cell.recommendationTitle.text = recipe[@"recipeTitle"];
+	cell.recommendationDescription.text = recipe[@"recipeDescription"];
+	cell.recommendationImage.file = recipe[@"image"];
+	[cell.recommendationImage loadInBackground];
+	 
+	return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 3;
+}
 
 @end

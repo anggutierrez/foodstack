@@ -7,18 +7,21 @@
 //
 
 #import "TimelineViewController.h"
-#import "LoginViewController.h"
+#import "ProfileViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 #import "Parse/Parse.h"
-#import "SceneDelegate.h"
 #import "MapViewController.h"
 #import "EntryCell.h"
 #import "Entry.h"
+#import "Recipe.h"
 #import "Utils.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *recipes;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) GMSGeocoder *geoCoder;
 
 @end
 
@@ -37,7 +40,9 @@
 	[self.tableView insertSubview:self.refreshControl atIndex:0];
 	
 	[self fetchEntries];
+	[self fetchRecipes];
 	
+	self.geoCoder = [GMSGeocoder geocoder];
 }
 
 - (void)fetchEntries {
@@ -66,6 +71,32 @@
 		}
 	}
 	[self.tableView reloadData];
+}
+
+- (void)fetchRecipes {
+	PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
+	[query orderByDescending: @"createdAt"];
+	query.limit = 20;
+	[query includeKey:@"author"];
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
+		if (recipes != nil) {
+			self.recipes = (NSMutableArray *) recipes;
+		} else {
+			NSLog(@"%@", error.localizedDescription);
+		}
+		[self currentUserRecipes];
+	}];
+}
+
+- (void) currentUserRecipes {
+	NSInteger count = [self.recipes count];
+	for (NSInteger index = (count - 1); index >= 0; index--) {
+		Recipe *recipe = self.recipes[index];
+		if (recipe.author.username != [PFUser currentUser].username) {
+			[self.recipes removeObjectAtIndex:index];
+		}
+	}
 }
 
 - (IBAction)didTapAdd:(id)sender {
@@ -98,18 +129,25 @@
 		UINavigationController *navVC = [segue destinationViewController];
 		MapViewController *mapvc = navVC.topViewController;
 		mapvc.entry = entry;
+	} else if ([segue.identifier isEqual:@"ProfileSegue"]) {
+		ProfileViewController *profilevc = [segue destinationViewController];
+		profilevc.recipes = self.recipes;
+		profilevc.entries = self.entries;
+	} else {
+		
 	}
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 	EntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EntryCell" forIndexPath:indexPath];
-	
 	Entry *entry = self.entries[indexPath.row];
 	cell.entry = entry;
 	
-//	if (entry.author.username == [PFUser currentUser].username) {
-//		cell.entry = entry;
-//	}
+	[self.geoCoder reverseGeocodeCoordinate:CLLocationCoordinate2DMake([entry.entryLatitude doubleValue], [entry.entryLongitude doubleValue]) completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {
+		if (!error) {
+			cell.entryLocation.text = response.firstResult.locality;
+		}
+	}];
 	
 	return cell;
 }

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *profileUserLabel;
+@property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *recipes;
+
 
 - (void) recommend;
 @end

@@ -13,6 +13,7 @@
 		AC0A7A2E24D47A740085D57B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0A7A2D24D47A740085D57B /* MapKit.framework */; };
 		AC38AABB24D1F06800E3FDF5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABA24D1F06800E3FDF5 /* Utils.m */; };
 		AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */; };
+		AC5602AA24DCA3C500D3E4F7 /* RecommendationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5602A924DCA3C500D3E4F7 /* RecommendationCell.m */; };
 		AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */; };
 		AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */; };
 		AC6EFA2F24BFA48300CD6600 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2E24BFA48300CD6600 /* ListsViewController.m */; };
@@ -71,6 +72,8 @@
 		AC38AABA24D1F06800E3FDF5 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsViewController.h; sourceTree = "<group>"; };
 		AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsViewController.m; sourceTree = "<group>"; };
+		AC5602A824DCA3C500D3E4F7 /* RecommendationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendationCell.h; sourceTree = "<group>"; };
+		AC5602A924DCA3C500D3E4F7 /* RecommendationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendationCell.m; sourceTree = "<group>"; };
 		AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AC6EFA2824BFA3E300CD6600 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				ACF03C8C24BE620200BBA1D9 /* RecipeCell.m */,
 				AC6EFA3024BFBA8000CD6600 /* SearchCell.h */,
 				AC6EFA3124BFBA8000CD6600 /* SearchCell.m */,
+				AC5602A824DCA3C500D3E4F7 /* RecommendationCell.h */,
+				AC5602A924DCA3C500D3E4F7 /* RecommendationCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */,
 				AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */,
 				AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */,
+				AC5602AA24DCA3C500D3E4F7 /* RecommendationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

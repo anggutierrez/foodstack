@@ -7,10 +7,8 @@
 //
 
 #import "ListsViewController.h"
-#import "LoginViewController.h"
 #import "RecipeDetailsViewController.h"
 #import "Parse/Parse.h"
-#import "SceneDelegate.h"
 #import "RecipeCell.h"
 #import "Recipe.h"
 #import "Utils.h"
