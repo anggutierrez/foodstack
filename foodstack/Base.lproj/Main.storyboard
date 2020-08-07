@@ -303,12 +303,12 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Search" id="veq-UH-KlU">
+                            <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="veq-UH-KlU">
                                 <connections>
                                     <action selector="didTapSearch:" destination="MeK-NV-sTT" id="ieJ-Ld-Fx3"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Add" id="Slf-ta-mjF">
+                            <barButtonItem title="Add" image="plus" catalog="system" id="Slf-ta-mjF">
                                 <connections>
                                     <action selector="didTapAdd:" destination="MeK-NV-sTT" id="hde-Ca-cmw"/>
                                 </connections>
@@ -560,7 +560,7 @@
                                 <action selector="onTapCancel:" destination="dFM-2X-RI2" id="Ktx-OI-WPz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="iES-XF-lWk">
+                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.up" catalog="system" id="iES-XF-lWk">
                             <connections>
                                 <action selector="onTapSave:" destination="dFM-2X-RI2" id="jJs-xd-Vn0"/>
                             </connections>
@@ -697,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-3f-SJI">
-                                <rect key="frame" x="24" y="80" width="128" height="128"/>
+                                <rect key="frame" x="8" y="80" width="128" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="Xig-fZ-WhE"/>
@@ -705,24 +705,24 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsZ-wJ-jU7">
-                                <rect key="frame" x="168" y="80" width="238" height="21"/>
+                                <rect key="frame" x="152" y="80" width="254" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKK-X1-wH4">
-                                <rect key="frame" x="168" y="109" width="238" height="34"/>
+                                <rect key="frame" x="152" y="109" width="254" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxx-6x-MvV">
-                                <rect key="frame" x="168" y="151" width="67" height="21"/>
+                                <rect key="frame" x="152" y="151" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s41-4i-wOb">
-                                <rect key="frame" x="168" y="180" width="96" height="34"/>
+                                <rect key="frame" x="152" y="180" width="96" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="7wq-vr-LiV"/>
                                 </constraints>
@@ -730,7 +730,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AE9-Bf-QJ0">
-                                <rect key="frame" x="48" y="216" width="80" height="30"/>
+                                <rect key="frame" x="32" y="216" width="80" height="30"/>
                                 <state key="normal" title="Add Picture"/>
                                 <connections>
                                     <action selector="onTapImage:" destination="LUY-7l-m1u" eventType="touchUpInside" id="IR9-ct-2ho"/>
@@ -768,7 +768,7 @@
                         <constraints>
                             <constraint firstItem="gsZ-wJ-jU7" firstAttribute="leading" secondItem="rD2-3f-SJI" secondAttribute="trailing" constant="16" id="73s-OU-EPU"/>
                             <constraint firstItem="AE9-Bf-QJ0" firstAttribute="centerX" secondItem="rD2-3f-SJI" secondAttribute="centerX" id="DkB-4u-za6"/>
-                            <constraint firstItem="rD2-3f-SJI" firstAttribute="leading" secondItem="iAg-rB-5TV" secondAttribute="leading" constant="24" id="JZ8-n2-aiY"/>
+                            <constraint firstItem="rD2-3f-SJI" firstAttribute="leading" secondItem="iAg-rB-5TV" secondAttribute="leading" constant="8" id="JZ8-n2-aiY"/>
                             <constraint firstItem="FNK-58-bw7" firstAttribute="trailing" secondItem="bKK-X1-wH4" secondAttribute="trailing" id="K7P-bH-0gd"/>
                             <constraint firstItem="sxx-6x-MvV" firstAttribute="leading" secondItem="gsZ-wJ-jU7" secondAttribute="leading" id="L7B-U6-7MF"/>
                             <constraint firstItem="iAg-rB-5TV" firstAttribute="bottom" secondItem="b1g-sC-y04" secondAttribute="bottom" constant="8" id="Lb7-oS-EEw"/>
@@ -800,7 +800,7 @@
                                 <action selector="onTapCancel:" destination="LUY-7l-m1u" id="QdG-0b-PGn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="dGX-HC-CEb">
+                        <barButtonItem key="rightBarButtonItem" title="Save" image="square.and.arrow.up" catalog="system" id="dGX-HC-CEb">
                             <connections>
                                 <action selector="onTapSave:" destination="LUY-7l-m1u" id="n4j-2y-h9G"/>
                             </connections>
@@ -906,12 +906,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="P04-01-hwM">
                         <rightBarButtonItems>
-                            <barButtonItem title="Search" id="6jl-dQ-KlG">
+                            <barButtonItem title="Search" image="magnifyingglass" catalog="system" id="6jl-dQ-KlG">
                                 <connections>
                                     <action selector="didTapSearch:" destination="qtn-sB-cZc" id="z0t-hc-plR"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Add" id="IDM-gs-k0U">
+                            <barButtonItem title="Add" image="plus" catalog="system" id="IDM-gs-k0U">
                                 <connections>
                                     <action selector="didTapAdd:" destination="qtn-sB-cZc" id="yxL-cl-b06"/>
                                 </connections>
@@ -1142,7 +1142,7 @@
                         <viewLayoutGuide key="safeArea" id="wgV-Ka-En5"/>
                     </view>
                     <navigationItem key="navigationItem" id="xqS-hY-UXf">
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="KOH-NH-PDt">
+                        <barButtonItem key="rightBarButtonItem" title="Update" image="square.and.arrow.up" catalog="system" id="KOH-NH-PDt">
                             <connections>
                                 <action selector="didTapUpdate:" destination="u9W-gh-n8D" id="ACn-Ns-pPN"/>
                             </connections>
@@ -1181,7 +1181,12 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6Ti-fS-iFC"/>
-        <segue reference="6yg-Yh-0MV"/>
-        <segue reference="1YN-jI-qJM"/>
+        <segue reference="qVv-vV-Rev"/>
+        <segue reference="tgM-Dv-LVV"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

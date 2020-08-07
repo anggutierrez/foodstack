@@ -8,6 +8,8 @@
 
 #import "SignUpViewController.h"
 #import "Parse/Parse.h"
+#import "ApplicationScheme.h"
+
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -22,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;}
 
 - (IBAction)didTapRegister:(id)sender {
 	if ([self _isValidInput ]) {

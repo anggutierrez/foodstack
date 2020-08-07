@@ -12,6 +12,7 @@
 #import "Recipe.h"
 #import "Entry.h"
 #import "RecommendationCell.h"
+#import "ApplicationScheme.h"
 
 @interface ProfileViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,7 +27,11 @@
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
-		self.tableView.rowHeight = 120;
+	self.tableView.rowHeight = 120;
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
+	self.tableView.backgroundColor = colorScheme.surfaceColor;
 	
 	PFUser *user = [PFUser currentUser];
 	self.profileUserLabel.text = user.username;
@@ -47,8 +52,6 @@
 }
 
 - (void) recommend {
-	//	Recipe *recommendedRecipe;
-	
 	// Recipes turn into NSSet
 	NSSet *recipes = [NSSet setWithArray:(NSArray *)self.recipes];
 	
@@ -118,6 +121,9 @@
 	cell.recommendationDescription.text = recipe[@"recipeDescription"];
 	cell.recommendationImage.file = recipe[@"image"];
 	[cell.recommendationImage loadInBackground];
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	cell.backgroundColor = colorScheme.surfaceColor;
 	 
 	return cell;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "RecipeDetailsViewController.h"
+#import "ApplicationScheme.h"
 #import "Utils.h"
 @import Parse;
 
@@ -25,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
 	
 	self.detailImageView.file = _recipe.image;
 	[self.detailImageView loadInBackground];

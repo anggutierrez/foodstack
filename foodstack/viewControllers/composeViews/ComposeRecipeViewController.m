@@ -9,6 +9,7 @@
 #import "ComposeRecipeViewController.h"
 #import "Recipe.h"
 #import "Utils.h"
+#import "ApplicationScheme.h"
 
 @interface ComposeRecipeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *composeTitleField;
@@ -24,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

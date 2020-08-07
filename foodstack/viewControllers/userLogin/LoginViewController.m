@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "ApplicationScheme.h"
+
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -16,6 +18,14 @@
 @end
 
 @implementation LoginViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
+}
 
 - (IBAction)didTapLogin:(id)sender {
 	if ([self _isValidInput]) {

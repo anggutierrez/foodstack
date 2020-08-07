@@ -15,6 +15,7 @@
 #import "Entry.h"
 #import "Recipe.h"
 #import "Utils.h"
+#import "ApplicationScheme.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -38,6 +39,10 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
 	[self.refreshControl addTarget:self action:@selector(fetchEntries) forControlEvents:UIControlEventValueChanged];
 	[self.tableView insertSubview:self.refreshControl atIndex:0];
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
+	self.tableView.backgroundColor = colorScheme.surfaceColor;
 	
 	[self fetchEntries];
 	[self fetchRecipes];
@@ -149,6 +154,9 @@
 		}
 	}];
 	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	cell.backgroundColor = colorScheme.surfaceColor;
+	
 	return cell;
 }
 
@@ -164,6 +172,12 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return self.entries.count;
+}
+
+static UIColor *ColorFromRGB(uint32_t colorValue) {
+  return [[UIColor alloc] initWithRed:(CGFloat)(((colorValue >> 16) & 0xFF) / 255.0)
+                                green:(CGFloat)(((colorValue >> 8) & 0xFF) / 255.0)
+                                 blue:(CGFloat)((colorValue & 0xFF) / 255.0) alpha:1];
 }
 
 @end

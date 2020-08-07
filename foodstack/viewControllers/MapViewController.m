@@ -8,9 +8,10 @@
 
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
-#import "Utils.h"
 #import "EntryCell.h"
+#import "ApplicationScheme.h"
 #import "TimelineViewController.h"
+#import "Utils.h"
 
 
 @interface MapViewController ()

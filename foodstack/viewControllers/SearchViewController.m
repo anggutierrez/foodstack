@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "SearchCell.h"
+#import "ApplicationScheme.h"
 #import "UIImageView+AFNetworking.h"
 #import "Utils.h"
 #import <StripHTML/NSString+StripHTML.h>
@@ -28,6 +29,10 @@
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
 	self.tableView.rowHeight = 120;
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
+	self.tableView.backgroundColor = colorScheme.surfaceColor;
 	
 }
 - (IBAction)didTapSearch:(id)sender {
@@ -85,6 +90,9 @@
     NSURL *imageURL = [NSURL URLWithString:imageURLString];
 	
 	[cell.searchImageView setImageWithURL:imageURL];
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	cell.backgroundColor = colorScheme.surfaceColor;
 
 	return cell;
 }

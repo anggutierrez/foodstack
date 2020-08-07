@@ -12,7 +12,6 @@
 		AC0A7A2C24D47A6D0085D57B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0A7A2B24D47A6D0085D57B /* CoreLocation.framework */; };
 		AC0A7A2E24D47A740085D57B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0A7A2D24D47A740085D57B /* MapKit.framework */; };
 		AC38AABB24D1F06800E3FDF5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABA24D1F06800E3FDF5 /* Utils.m */; };
-		AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */; };
 		AC5602AA24DCA3C500D3E4F7 /* RecommendationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5602A924DCA3C500D3E4F7 /* RecommendationCell.m */; };
 		AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2624BF65D800CD6600 /* SignUpViewController.m */; };
 		AC6EFA2A24BFA3E300CD6600 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA2924BFA3E300CD6600 /* TimelineViewController.m */; };
@@ -24,6 +23,7 @@
 		AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6EFA3D24C2526000CD6600 /* ComposeRecipeViewController.m */; };
 		AC7960F524D9E53B0093A85A /* RecipeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7960F424D9E53B0093A85A /* RecipeDetailsViewController.m */; };
 		ACA7C59324D0DF0A00DD5590 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7C59224D0DF0A00DD5590 /* MapViewController.m */; };
+		ACCC156324DDF3F70027E683 /* ApplicationScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCC156124DDF3F70027E683 /* ApplicationScheme.m */; };
 		ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */; };
 		ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF03C4B24BE5F1700BBA1D9 /* SceneDelegate.m */; };
 		ACF03C5224BE5F1700BBA1D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF03C5024BE5F1700BBA1D9 /* Main.storyboard */; };
@@ -70,8 +70,6 @@
 		AC0A7A2D24D47A740085D57B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AC38AAB924D1F06800E3FDF5 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		AC38AABA24D1F06800E3FDF5 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsViewController.h; sourceTree = "<group>"; };
-		AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsViewController.m; sourceTree = "<group>"; };
 		AC5602A824DCA3C500D3E4F7 /* RecommendationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendationCell.h; sourceTree = "<group>"; };
 		AC5602A924DCA3C500D3E4F7 /* RecommendationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendationCell.m; sourceTree = "<group>"; };
 		AC6EFA2524BF65D800CD6600 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -94,6 +92,8 @@
 		AC7960F424D9E53B0093A85A /* RecipeDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailsViewController.m; sourceTree = "<group>"; };
 		ACA7C59124D0DF0A00DD5590 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		ACA7C59224D0DF0A00DD5590 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		ACCC156124DDF3F70027E683 /* ApplicationScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationScheme.m; path = ../../../Downloads/ApplicationScheme.m; sourceTree = "<group>"; };
+		ACCC156224DDF3F70027E683 /* ApplicationScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationScheme.h; path = ../../../Downloads/ApplicationScheme.h; sourceTree = "<group>"; };
 		ACF03C4424BE5F1700BBA1D9 /* foodstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF03C4724BE5F1700BBA1D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACF03C4824BE5F1700BBA1D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,8 +183,6 @@
 			children = (
 				AC38AAB924D1F06800E3FDF5 /* Utils.h */,
 				AC38AABA24D1F06800E3FDF5 /* Utils.m */,
-				AC38AABC24D2118000E3FDF5 /* UtilsViewController.h */,
-				AC38AABD24D2118000E3FDF5 /* UtilsViewController.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -247,6 +245,8 @@
 		ACF03C4624BE5F1700BBA1D9 /* foodstack */ = {
 			isa = PBXGroup;
 			children = (
+				ACCC156224DDF3F70027E683 /* ApplicationScheme.h */,
+				ACCC156124DDF3F70027E683 /* ApplicationScheme.m */,
 				ACF03C7E24BE5F9100BBA1D9 /* viewControllers */,
 				ACF03C7D24BE5F8A00BBA1D9 /* Views */,
 				ACF03C7C24BE5F8400BBA1D9 /* Models */,
@@ -608,7 +608,6 @@
 				ACF03C8424BE609C00BBA1D9 /* EntryCell.m in Sources */,
 				AC6EFA3E24C2526000CD6600 /* ComposeRecipeViewController.m in Sources */,
 				AC6EFA3524C2415700CD6600 /* ProfileViewController.m in Sources */,
-				AC38AABE24D2118000E3FDF5 /* UtilsViewController.m in Sources */,
 				ACF03C4924BE5F1700BBA1D9 /* AppDelegate.m in Sources */,
 				AC6EFA3824C2441300CD6600 /* SearchViewController.m in Sources */,
 				ACF03C9624BE6C3900BBA1D9 /* LoginViewController.m in Sources */,
@@ -616,6 +615,7 @@
 				AC6EFA2724BF65D800CD6600 /* SignUpViewController.m in Sources */,
 				ACF03C9024BE633F00BBA1D9 /* Entry.m in Sources */,
 				AC6EFA3224BFBA8000CD6600 /* SearchCell.m in Sources */,
+				ACCC156324DDF3F70027E683 /* ApplicationScheme.m in Sources */,
 				ACF03C5A24BE5F1800BBA1D9 /* main.m in Sources */,
 				ACF03C4C24BE5F1700BBA1D9 /* SceneDelegate.m in Sources */,
 				AC6EFA3B24C2523000CD6600 /* ComposeEntryViewController.m in Sources */,

@@ -12,6 +12,8 @@
 #import "RecipeCell.h"
 #import "Recipe.h"
 #import "Utils.h"
+#import "ApplicationScheme.h"
+
 
 @interface ListsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -29,6 +31,10 @@
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
 	self.tableView.rowHeight = 105;
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
+	self.tableView.backgroundColor = colorScheme.surfaceColor;
 	
     self.refreshControl = [[UIRefreshControl alloc] init];
 	[self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
@@ -105,6 +111,9 @@
 	
 	Recipe *recipe = self.recipes[indexPath.row];
 	cell.recipe = recipe;
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	cell.backgroundColor = colorScheme.surfaceColor;
 	
 	return cell;
 }

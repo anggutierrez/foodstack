@@ -8,6 +8,7 @@
 
 #import "ComposeEntryViewController.h"
 #import "Entry.h"
+#import "ApplicationScheme.h"
 #import "Utils.h"
 
 @interface ComposeEntryViewController ()
@@ -24,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+	self.view.backgroundColor = colorScheme.surfaceColor;
 	
 	_location = [[CLLocationManager alloc] init];
 	_location.delegate = self;
