@@ -13,6 +13,7 @@
 @interface ComposeRecipeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *composeTitleField;
 @property (weak, nonatomic) IBOutlet UITextField *composeCaloriesField;
+@property (weak, nonatomic) IBOutlet UITextField *composeRatingField;
 @property (weak, nonatomic) IBOutlet UITextView *composeDescField;
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
 
@@ -56,9 +57,22 @@
 - (IBAction)onTapSave:(id)sender {
 	NSNumber *cal = [Utils stringToNumber:self.composeCaloriesField.text];
 	
+	NSNumber *rating = nil;
+	if (self.composeRatingField.hasText) {
+		rating = [Utils stringToNumber:self.composeRatingField.text];
+	}
+	
 	UIImage *resized = [self resizeImage:self.recipeImageView.image withSize:CGSizeMake(150, 150)];
 	
-	if (![self _isEmpty]) {
+	if (![self _fieldsAreEmpty] && self.composeRatingField.hasText) {
+		[Recipe postUserRecipe:self.composeTitleField.text withCalCount:cal withRecipeDescription:self.composeDescField.text withImage:resized withIngredients:nil withRating:rating withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+			if (!error) {
+				[self dismissViewControllerAnimated:true completion:nil];
+			} else {
+				NSLog(@"%@", error.localizedDescription);
+			}
+		}];
+	} else {
 		[Recipe postUserRecipe:self.composeTitleField.text withCalCount:cal withRecipeDescription:self.composeDescField.text withImage:resized withIngredients: (NSArray * _Nullable )nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
 			if (!error) {
 				[self dismissViewControllerAnimated:true completion:nil];
@@ -66,10 +80,11 @@
 				NSLog(@"%@", error.localizedDescription);
 			}
 		}];
+
 	}
 }
 
-- (bool) _isEmpty {
+- (bool) _fieldsAreEmpty {
 	if (!self.composeTitleField.hasText && !self.composeCaloriesField.hasText) {
 		return YES;
 	}

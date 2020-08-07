@@ -25,7 +25,12 @@
     return @"Recipe";
 }
 
-+ (void) postUserRecipe: ( NSString * _Nullable )recipeTitle withCalCount: ( NSNumber * _Nullable )calCount withRecipeDescription: (NSString * _Nullable )recipeDescription withImage:( UIImage * _Nullable )image  withIngredients: (NSArray * _Nullable )ingredients withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserRecipe: (NSString * _Nullable)recipeTitle
+		   withCalCount: (NSNumber * _Nullable)calCount
+  withRecipeDescription: (NSString * _Nullable)recipeDescription
+			  withImage: (UIImage * _Nullable)image
+		withIngredients: (NSArray * _Nullable)ingredients
+		 withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Recipe *newRecipe = [Recipe new];
 	newRecipe.recipeTitle = recipeTitle;
@@ -36,6 +41,27 @@
 	
 	newRecipe.ingredients = ingredients;
 	newRecipe.rating = [NSNumber numberWithInt:1];
+    
+    [newRecipe saveInBackgroundWithBlock: completion];
+}
+
++ (void) postUserRecipe: (NSString * _Nullable)recipeTitle
+		   withCalCount: (NSNumber * _Nullable)calCount
+  withRecipeDescription: (NSString * _Nullable)recipeDescription
+			  withImage: (UIImage * _Nullable)image
+		withIngredients: (NSArray * _Nullable)ingredients
+			 withRating: (NSNumber * _Nullable)rating
+		 withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    
+    Recipe *newRecipe = [Recipe new];
+	newRecipe.recipeTitle = recipeTitle;
+	newRecipe.calCount = calCount;
+	newRecipe.recipeDescription = recipeDescription;
+	newRecipe.image = [Utils getPFFileFromImage:image];
+    newRecipe.author = [PFUser currentUser];
+	
+	newRecipe.ingredients = ingredients;
+	newRecipe.rating = rating;
     
     [newRecipe saveInBackgroundWithBlock: completion];
 }

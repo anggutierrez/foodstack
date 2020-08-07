@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *recommendationImage;
 @property (weak, nonatomic) IBOutlet UILabel *recommendationTitle;
 @property (weak, nonatomic) IBOutlet UILabel *recommendationDescription;
+@property (assign, nonatomic) BOOL isAnimated;
+
 
 
 @end

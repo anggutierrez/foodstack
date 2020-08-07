@@ -122,6 +122,16 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(RecommendationCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (cell.isAnimated) {return;}
+	
+	cell.alpha = 0.0;
+	[UIView animateWithDuration:1.0 animations:^{
+	   cell.alpha = 1.5;
+	   cell.isAnimated = YES;
+	}];
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return 3;
 }

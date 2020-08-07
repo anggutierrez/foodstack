@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (void) postUserRecipe: ( NSString * _Nullable )recipeTitle withCalCount: ( NSNumber * _Nullable )calCount withRecipeDescription: (NSString * _Nullable )recipeDescription withImage:( UIImage * _Nullable )image withIngredients: (NSArray * _Nullable )ingredients withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postUserRecipe: (NSString * _Nullable)recipeTitle withCalCount: (NSNumber * _Nullable)calCount withRecipeDescription: (NSString * _Nullable)recipeDescription withImage: (UIImage * _Nullable)image withIngredients: (NSArray * _Nullable)ingredients withRating: (NSNumber * _Nullable)rating withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,8 +20,6 @@
 - (void)setEntry:(Entry *)entry {
 	_entry = entry;
 	_isAnimated = NO;
-	//	self.photoImageView.file = recipe[@"image"];
-	//	[self.photoImageView loadInBackground];
 	
 	self.entryTitle.text = entry.entryTitle;
 	self.entryDescription.text = entry.entryDescription;
@@ -32,29 +30,12 @@
 	NSString *calories = [entry.calCount stringValue];
 	self.entryCalories.text = calories;
 	
-//	[self reverseGeoCode];
-	
 	NSDate *createdAt = [entry createdAt];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	// Configure the input format to parse the date string
 	formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
 	self.entryTimestamp.text = [createdAt shortTimeAgoSinceNow];
-//	[formatter setDateFormat:@"M/d"];
-//	self.entryTimestamp.text = [formatter stringFromDate:createdAtOriginalString];
 	
 }
-
-/*
-- (void) reverseGeoCode {
-	GMSGeocoder *geoCoder = [GMSGeocoder geocoder];
-
-	[geoCoder reverseGeocodeCoordinate:	CLLocationCoordinate2DMake([_entryLatitude doubleValue], [_entryLongitude doubleValue]) completionHandler:^(GMSReverseGeocodeResponse * _Nullable response, NSError * _Nullable error) {
-		if (!error) {
-			self.entryLocation.text = response.firstResult.locality;
-		}
-	}];
-}
- */
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

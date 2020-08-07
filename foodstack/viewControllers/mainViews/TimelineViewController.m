@@ -127,7 +127,7 @@
 		Entry *entry = self.entries[indexPath.row];
 		
 		UINavigationController *navVC = [segue destinationViewController];
-		MapViewController *mapvc = navVC.topViewController;
+		MapViewController *mapvc = (MapViewController *)navVC.topViewController;
 		mapvc.entry = entry;
 	} else if ([segue.identifier isEqual:@"ProfileSegue"]) {
 		ProfileViewController *profilevc = [segue destinationViewController];
