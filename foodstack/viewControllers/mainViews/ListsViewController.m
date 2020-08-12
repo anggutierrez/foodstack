@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 	
 	self.tableView.dataSource = self;
 	self.tableView.delegate = self;
@@ -46,7 +45,6 @@
 - (void)fetchRecipes {
 	PFQuery *query = [PFQuery queryWithClassName:@"Recipe"];
 	[query orderByDescending: @"createdAt"];
-	query.limit = 20;
 	[query includeKey:@"author"];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *recipes, NSError *error) {
@@ -69,14 +67,6 @@
 		}
 	}
 	[self.tableView reloadData];
-}
-
-- (IBAction)didTapProfile:(id)sender {
-	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
-}
-
-- (IBAction)didSwipeLeft:(id)sender {
-	[self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 }
 
 - (IBAction)didSwipeRight:(id)sender {

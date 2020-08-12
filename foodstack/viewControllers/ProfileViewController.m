@@ -53,7 +53,7 @@
 
 - (void) recommend {
 	// Recipes turn into NSSet
-	NSSet *recipes = [NSSet setWithArray:(NSArray *)self.recipes];
+	NSMutableSet *recipes = [NSMutableSet setWithArray:(NSArray *)self.recipes];
 	
 	// Filter out entries older than 1 week
 	// [self newestEntries];
@@ -62,10 +62,12 @@
 	NSSet *entries = [NSSet setWithArray:(NSArray *)self.entries];
 	
 	// Remove recipes that share a name with entries name
-	NSSet *filteredSet = recipes; // - entries;
+	[recipes minusSet:entries];
 	
 	// Bubble sort
-	[self bubbleSort:filteredSet];
+	if (recipes.count >= 3) {
+		[self bubbleSort:recipes];
+	}
 	
 	// STRETCH: Top 3 Recipes are checked to find repeating ingredients
 		// Will then do search for most used ingredients and return top 3 results from spoonacular API
@@ -82,8 +84,11 @@
 			Recipe *recipe1 = arr[j];
 			Recipe *recipe2 = arr[j + 1];
 			if (recipe1.rating > recipe2.rating) {
-				// Check if this is passing by reference
-				[self swapRecipe:arr[j] withSecondRecipe:arr[j + 1]];
+				Recipe *tempRecipe = recipe1;
+				
+				recipe1 = recipe2;
+				
+				recipe2 = tempRecipe;
 			}
 		}
 	}
@@ -93,15 +98,6 @@
 	NSUInteger count = sizeof(objects) / sizeof(id);
 	_topRecipes = [NSArray arrayWithObjects:objects count:count];
 }
-
-- (void) swapRecipe:(Recipe *)recipe1 withSecondRecipe:(Recipe *)recipe2 {
-	Recipe *tempRecipe = recipe1;
-	
-	recipe1 = recipe2;
-	
-	recipe2 = tempRecipe;
-}
-
 /*
 #pragma mark - Navigation
 

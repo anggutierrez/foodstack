@@ -53,7 +53,6 @@
 - (void)fetchEntries {
 	PFQuery *query = [PFQuery queryWithClassName:@"Entry"];
 	[query orderByDescending: @"createdAt"];
-	query.limit = 20;
 	[query includeKey:@"author"];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {

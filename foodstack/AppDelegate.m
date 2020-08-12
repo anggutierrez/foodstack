@@ -29,7 +29,8 @@
 	[Parse initializeWithConfiguration:config];
 	
 	[GMSServices provideAPIKey:@"AIzaSyDMsDogvXEpBegNlUXsFZjoWCQ4iiiKiz8"];
-
+	
+	UITabBar.appearance.tintColor = [UIColor colorWithRed:0.00 green:0.73 blue:0.21 alpha:1.0];
 	
 	return YES;
 }
